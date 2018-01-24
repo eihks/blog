@@ -10,7 +10,7 @@ try{
 		}
 		elseif($_GET["action"] === "postpage")
 		{
-			if(isset($_GET["id"]) AND $_GET["id"] > 0)
+			if(isset($_GET["id_post"]) AND $_GET["id_post"] > 0)
 			{
 				Controller::postpage();
 			}
