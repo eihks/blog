@@ -7,4 +7,10 @@ class Controller{
 		$posts = $postManager->getPosts();
 		require("view/frontend/homepageView.php");
 	}
+	public static function postpage()
+	{
+		$postManager = new PostManager();
+		$post = $postManager->getPost();
+		require("view/frontend/postView.php");
+	}
 }
