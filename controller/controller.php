@@ -11,6 +11,8 @@ class Controller{
 	{
 		$postManager = new PostManager();
 		$post = $postManager->getPost();
+		$commentManager = new CommentManager();
+		$comms = $commentManager->getComms();
 		require("view/frontend/postView.php");
 	}
 }
