@@ -16,4 +16,10 @@ class Controller{
 		$comms = $commentManager->getComms();
 		require("view/frontend/postView.php");
 	}
+	public static function newComment()
+	{
+		$CommentManager = new CommentManager();
+		$post = $CommentManager->insertComment();
+		header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]);
+	}
 }
