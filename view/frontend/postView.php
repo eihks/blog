@@ -23,8 +23,17 @@ ob_start();
 			<a href="index.php?action=reportcomment&id_post=<?= $_GET['id_post']; ?>&id=<?= $datas['id']; ?>" ><i class="fa fa-exclamation" aria-hidden="true"></i></a>
 		</div>
 </div>
+
 <?php
 }
+?>
+<form method="POST" action="index.php?action=newcomment&id_post=<?= $_GET['id_post']; ?> ">		
+	<p>
+		<label>Poster un commentaire :<textarea name="content"></textarea></label>
+	</p>
+	<input type="submit" value="Envoyer">
+</form>
+<?php
 $content = ob_get_clean();
 require("view/frontend/template.php");
 ?>
