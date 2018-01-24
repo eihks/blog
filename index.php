@@ -7,3 +7,7 @@ if(isset($_GET["action"]))
 		Controller::homepage();
 	}
 }
+else
+{
+	header("Location: index.php?action=homepage");
+}
