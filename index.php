@@ -1,13 +1,31 @@
 <?php
 require("controller/controller.php");
-if(isset($_GET["action"]))
+
+try{
+	if(isset($_GET["action"]))
+	{
+		if($_GET["action"] === "homepage")
+		{
+			Controller::homepage();
+		}
+		elseif($_GET["action"] === "postpage")
+		{
+			if(isset($_GET["id"]) AND $_GET["id"] > 0)
+			{
+				Controller::postpage();
+			}
+			else
+			{
+				throw new Exception("Aucun identifiant de billet envoyé");
+			}
+		}
+		else
+		{
+			header("Location: index.php?action=homepage");
+		}
+	}
+}
+catch(Exception $e)
 {
-	if($_GET["action"] === "homepage")
-	{
-		Controller::homepage();
-	}
-	else
-	{
-		header("Location: index.php?action=homepage");
-	}
+	echo "Erreur : ". $e->getMessage();
 }
