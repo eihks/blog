@@ -19,6 +19,17 @@ try{
 				throw new Exception("Aucun identifiant de billet envoyé");
 			}
 		}
+		elseif($_GET["action"] === "newcomment")
+		{
+			if(isset($_GET["id_post"]) AND $_GET["id_post"] > 0)
+			{
+				Controller::newcomment();
+			}
+			else
+			{
+				throw new Exception("Aucun identifiant de billet envoyé");
+			}
+		}
 		else
 		{
 			header("Location: index.php?action=homepage");
