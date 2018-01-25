@@ -20,4 +20,13 @@ class CommentManager extends Manager{
 		));
 		return $post;
 	}
+	public function reportComment()
+	{
+		$db = $this->db();
+		$comment = $db->prepare("UPDATE comments SET report_level=report_level+1 WHERE id = :id");
+		$comment->execute(array(
+			"id" => $_GET["id"]
+		));
+		return $comment;
+	}
 }
