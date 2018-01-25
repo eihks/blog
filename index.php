@@ -31,10 +31,10 @@ try{
 				throw new Exception("Aucun identifiant de billet envoyé");
 			}
 		}
-		else
-		{
-			header("Location: index.php?action=homepage");
-		}
+	}
+	else
+	{
+		header("Location: index.php?action=homepage");
 	}
 }
 catch(Exception $e)
