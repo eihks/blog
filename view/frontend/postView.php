@@ -25,6 +25,18 @@ while($datas = $comms->fetch())
 </div>
 <?php
 }
+var_dump($_SESSION["alreadyReported"]);
+if($_SESSION["alreadyReported"] === true)
+{
+?>
+<script>
+	alert("Commentaire déjà signalé !");
+</script>
+<?php
+$_SESSION["alreadyReported"] = false;
+}
+var_dump($_SESSION["alreadyReported"]);
+
 ?>
 <form method="POST" action="index.php?action=newcomment&id_post=<?= $_GET['id_post']; ?> ">		
 	<p>
