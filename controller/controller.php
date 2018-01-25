@@ -22,4 +22,10 @@ class Controller{
 		$post = $CommentManager->insertComment();
 		header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]);
 	}
+	public static function reportComment()
+	{
+		$commentManager = new CommentManager();
+		$reportedComment = $commentManager->reportComment();
+		header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]);	
+	}
 }
