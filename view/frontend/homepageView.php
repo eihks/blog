@@ -1,4 +1,6 @@
-<?php $title="Jean Forteroche"; ?>
+<?php 
+$title="Jean Forteroche";
+$cssFile = "style.css"; ?>
 <?php
 	ob_start();
 ?>
