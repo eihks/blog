@@ -1,5 +1,5 @@
 <?php $title = "test"; ?>
-<?php $cssFile = "aaa"; ?>
+<?php $cssFile = "stylePostView.css"; ?>
 <?php
 ob_start();
  ?>
@@ -8,9 +8,10 @@ ob_start();
 	$data = $post->fetch();
 ?>
 	<div class="ticket">
-		<div class="contenaire_title_date">
-			<p><?= htmlspecialchars($data["title"]); ?> <?= $data["creation_date_fr"]; ?></p>
-		</div>
+		<span class="title"><p><?= htmlspecialchars($data["title"]); ?></p></span>
+		<span class="text"><p><?= htmlspecialchars($data["content"]); ?></p></span>
+		<span class="author"><p><?= htmlspecialchars($data["author"]); ?></p></span>
+		<span class ="date"><p><?= htmlspecialchars($data["creation_date_fr"]); ?></p></span>
 	</div>
 	<a href="index.php?action=homepage">Retour à la page d'accueil</a>
 </div>
