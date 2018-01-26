@@ -13,7 +13,6 @@ ob_start();
 		<span class="author"><p><?= htmlspecialchars($data["author"]); ?></p></span>
 		<span class ="date"><p><?= htmlspecialchars($data["creation_date_fr"]); ?></p></span>
 	</div>
-	<a href="index.php?action=homepage">Retour à la page d'accueil</a>
 </div>
 
 <div id="contenaire-comments">
@@ -28,14 +27,17 @@ while($datas = $comms->fetch())
 </div>
 <?php
 }
-if($_SESSION["alreadyReported"] === true)
+if(isset($_SESSION["alreadyReported"]))
 {
+	if($_SESSION["alreadyReported"] === true)
+	{
 ?>
 <script>
 	alert("Commentaire déjà signalé !");
 </script>
 <?php
-$_SESSION["alreadyReported"] = false;
+	$_SESSION["alreadyReported"] = false;
+	}
 }
 ?>
 <form method="POST" action="index.php?action=newcomment&id_post=<?= $_GET['id_post']; ?> ">		
@@ -44,6 +46,7 @@ $_SESSION["alreadyReported"] = false;
 	</p>
 	<input type="submit" value="Envoyer">
 </form>
+<a href="index.php?action=homepage">Retour à la page d'accueil</a>
 <?php
 $content = ob_get_clean();
 require("view/frontend/template.php");
