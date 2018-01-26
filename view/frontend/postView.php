@@ -16,15 +16,13 @@ ob_start();
 </div>
 
 <div id="contenaire-comments">
+	<h2>Commentaires :</h2>	
 <?php 
 while($datas = $comms->fetch())
 {
 ?>
-	<div id="contenaire-comments">
-		<p><?php echo htmlspecialchars($datas["creation_date_fr"]) . "<br>" . htmlspecialchars($datas["content"]); ?></p>
-		<a href="index.php?action=reportcomment&id_post=<?= $_GET['id_post']; ?>&id=<?= $datas['id']; ?>" ><i class="fa fa-exclamation" aria-hidden="true"></i></a>
-	</div>
-</div>
+	<p><?php echo htmlspecialchars($datas["creation_date_fr"]) ?><a class="report-comment" title="Signaler le commentaire" href="index.php?action=reportcomment&id_post=<?= $_GET['id_post']; ?>&id=<?= $datas['id']; ?>" ><i class="fa fa-exclamation" aria-hidden="true"></i></a></p>
+	<p><?= htmlspecialchars($datas["content"]); ?></p>
 <?php
 }
 if(isset($_SESSION["alreadyReported"]))
@@ -40,6 +38,7 @@ if(isset($_SESSION["alreadyReported"]))
 	}
 }
 ?>
+</div>
 <form method="POST" action="index.php?action=newcomment&id_post=<?= $_GET['id_post']; ?> ">		
 	<p>
 		<label>Poster un commentaire :<textarea name="content"></textarea></label>
