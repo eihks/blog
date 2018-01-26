@@ -20,7 +20,7 @@ $cssFile = "style.css"; ?>
 	{
 ?>
 	<div class="ticket">
-		<a class="a-ticket" href="index.php?action=postpage&id_post=<?= $data['id']; ?> ">
+		<a class="a-ticket" href="index.php?action=postpage&title=<?= $data['title'] ?>&id_post=<?= $data['id']; ?> ">
 			<h2><?= htmlspecialchars($data["title"]); ?></h2>
 			<span class="text"><p><?= substr(htmlspecialchars($data["content"]), 0, 500) . "..."; ?></p></span>
 			<span class="author"><p><?= $data["author"]; ?></p></span><span class ="date"><p><?= $data["creation_date_fr"]; ?></p></span>
