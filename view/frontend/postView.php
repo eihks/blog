@@ -1,4 +1,4 @@
-<?php $title = "test"; ?>
+<?php $title = $_GET["title"]; ?>
 <?php $cssFile = "stylePostView.css"; ?>
 <?php
 ob_start();
