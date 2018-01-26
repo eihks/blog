@@ -39,7 +39,7 @@ if(isset($_SESSION["alreadyReported"]))
 }
 ?>
 </div>
-<form method="POST" action="index.php?action=newcomment&id_post=<?= $_GET['id_post']; ?> ">		
+<form id="form-post-comment" method="POST" action="index.php?action=newcomment&id_post=<?= $_GET['id_post']; ?> ">		
 	<p>
 		<label>Poster un commentaire :<textarea name="content"></textarea></label>
 	</p>
