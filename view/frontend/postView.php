@@ -1,4 +1,6 @@
-<?php $title = "test";
+<?php $title = "test"; ?>
+<?php $cssFile = "aaa"; ?>
+<?php
 ob_start();
  ?>
 <div id="contenaire_ticket">
@@ -25,7 +27,6 @@ while($datas = $comms->fetch())
 </div>
 <?php
 }
-var_dump($_SESSION["alreadyReported"]);
 if($_SESSION["alreadyReported"] === true)
 {
 ?>
@@ -35,8 +36,6 @@ if($_SESSION["alreadyReported"] === true)
 <?php
 $_SESSION["alreadyReported"] = false;
 }
-var_dump($_SESSION["alreadyReported"]);
-
 ?>
 <form method="POST" action="index.php?action=newcomment&id_post=<?= $_GET['id_post']; ?> ">		
 	<p>

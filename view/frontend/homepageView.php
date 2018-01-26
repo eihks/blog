@@ -11,9 +11,9 @@
 ?>
 	<div class="ticket">
 		<a class="a-ticket" href="index.php?action=postpage&id_post=<?= $data['id']; ?> ">
-			<div class="contenaire_title_date">
-				<p><?= htmlspecialchars($data["title"]); ?> <?= $data["creation_date_fr"]; ?></p>
-			</div>
+			<h2><?= htmlspecialchars($data["title"]); ?></h2>
+			<span class="text"><p><?= substr(htmlspecialchars($data["content"]), 0, 500) . "..."; ?></p></span>
+			<span class="author"><p><?= $data["author"]; ?></p></span><span class ="date"><p><?= $data["creation_date_fr"]; ?></p></span>
 		</a>
 	</div>
 <?php
