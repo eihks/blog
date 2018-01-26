@@ -1,0 +1,36 @@
+body{
+	margin : 0;
+	background-color: #f3f3f3;
+	font-family: sans-serif;
+	color : #666666;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color : #6666ff;
+	font-family: serif;
+}
+
+.ticket{
+	width : 90%;
+	background-color: white;
+	margin : 0 auto;
+	text-align : center;
+}
+
+.text p{
+	width : 90%;
+	margin : 0 auto;
+	text-align: justify;
+}
+
+#contenaire-comments{
+	width : 90%;
+	margin : 0 auto;
+	background-color : white;
+	text-align : center;
+}
+
+.report-comment{
+	margin-left : 10px;
+	color : red;
+}
