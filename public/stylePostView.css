@@ -50,3 +50,15 @@ label{
 #form-post-comment{
 	text-align: center;
 }
+
+#txt-area-comment{
+	width : 300px;
+	height : 100px;
+}
+
+@media screen and (max-width: 640px) {
+	#txt-area-comment{
+		width : 90%;
+		height : 100px;
+	}
+}
