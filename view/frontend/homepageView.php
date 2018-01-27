@@ -34,7 +34,7 @@ $cssFile = "style.css";
 <?php
 for($i =1; $i <= $totalPage; $i++)
 {
-	echo "<a href='index.php?action=homepage&id_page=$i'>". $i ."</a>";
+	echo "<a href='index.php?action=homepage&page=$i'>". $i ."</a>";
 }
 $content = ob_get_clean();
 require("view/frontend/template.php");
