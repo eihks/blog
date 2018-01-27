@@ -4,8 +4,13 @@ require_once("model/commentManager.php");
 class Controller{
 	public static function homepage()
 	{
+		$postPerPage = 5;
 		$postManager = new PostManager();
-		$posts = $postManager->getPosts();
+		$totalPost = $postManager->getTotalRow();
+		$totalPage = ceil($totalPost/$postPerPage);
+		$currentPage = $_GET["id_page"];
+		$start = ($currentPage -1)*$postPerPage;
+		$posts = $postManager->getPosts($start, $postPerPage);
 		require("view/frontend/homepageView.php");
 	}
 	public static function postpage()
