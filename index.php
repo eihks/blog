@@ -13,7 +13,7 @@ try{
 			}
 			else
 			{
-				header("Location: index.php?action=homepage&id_page=1");
+				header("Location: index.php?action=homepage&page=1");
 			}
 		}
 		elseif($_GET["action"] === "postpage")
@@ -45,7 +45,7 @@ try{
 	}
 	else
 	{
-		header("Location: index.php?action=homepage&id_page=1");
+		header("Location: index.php?action=homepage&page=1");
 	}
 }
 catch(Exception $e)
