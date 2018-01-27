@@ -7,7 +7,14 @@ try{
 	{
 		if($_GET["action"] === "homepage")
 		{
-			Controller::homepage();
+			if(isset($_GET["page"]) AND $_GET["page"] > 0)
+			{
+				Controller::homepage();
+			}
+			else
+			{
+				header("Location: index.php?action=homepage&id_page=1");
+			}
 		}
 		elseif($_GET["action"] === "postpage")
 		{
@@ -38,10 +45,11 @@ try{
 	}
 	else
 	{
-		header("Location: index.php?action=homepage");
+		header("Location: index.php?action=homepage&id_page=1");
 	}
 }
 catch(Exception $e)
 {
 	echo "Erreur : ". $e->getMessage();
+	echo "<br><a href='index.php?action=homepage&id_page=1'>Retourner sur la page d'accueil du blog</a>";
 }
