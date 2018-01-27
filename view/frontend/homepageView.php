@@ -1,6 +1,7 @@
 <?php 
 $title="Jean Forteroche";
-$cssFile = "style.css"; ?>
+$cssFile = "style.css";
+?>
 <?php
 	ob_start();
 ?>
@@ -31,6 +32,10 @@ $cssFile = "style.css"; ?>
 ?>
 </div>
 <?php
+for($i =1; $i <= $totalPage; $i++)
+{
+	echo "<a href='index.php?action=homepage&id_page=$i'>". $i ."</a>";
+}
 $content = ob_get_clean();
 require("view/frontend/template.php");
 ?>
