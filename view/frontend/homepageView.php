@@ -39,11 +39,15 @@ if($_GET["page"] > 1)
 	}
 ?>
 </div>
+<div id="contenaire-link-page">
+	<?php
+	for($i =1; $i <= $totalPage; $i++)
+	{
+		echo "<a href='index.php?action=homepage&page=$i'>". $i ."</a>";
+	}
+?>
+</div>
 <?php
-for($i =1; $i <= $totalPage; $i++)
-{
-	echo "<a href='index.php?action=homepage&page=$i'>". $i ."</a>";
-}
 $content = ob_get_clean();
 require("view/frontend/template.php");
 ?>
