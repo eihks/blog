@@ -17,4 +17,12 @@ class PostManager extends Manager{
 		));
 		return $post;
 	}
+
+	public function getTotalRow()
+	{
+		$db = $this->db();
+		$totalRows = $db->query("SELECT id FROM tickets");
+		$totalRows = $totalRows->rowCount();
+		return $totalRows;
+	}
 }
