@@ -8,7 +8,7 @@ class Controller{
 		$postManager = new PostManager();
 		$totalPost = $postManager->getTotalRow();
 		$totalPage = ceil($totalPost/$postPerPage);
-		$currentPage = $_GET["id_page"];
+		$currentPage = $_GET["page"];
 		$start = ($currentPage -1)*$postPerPage;
 		$posts = $postManager->getPosts($start, $postPerPage);
 		require("view/frontend/homepageView.php");
