@@ -1,13 +1,21 @@
 <?php 
 $title="Jean Forteroche";
 $cssFile = "style.css";
-?>
-<?php
-	ob_start();
+ob_start();
 ?>
 
 <div id="img-background"></div>
 <div id="main-summarize">
+<?php
+if($_GET["page"] > 1)
+{
+?>
+<script>
+	document.querySelector("#main-summarize").style.display="none";
+</script>
+<?php
+}
+?>
 	<h1>Bienvenue sur mon blog !</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum nibh at tempor gravida. Praesent tempor arcu dui. Curabitur vitae vehicula nunc, non vulputate ex. Suspendisse potenti. Morbi fringilla ligula non massa fringilla cursus. Nullam condimentum lectus et quam commodo, in pellentesque libero imperdiet. Maecenas vitae arcu et urna faucibus pretium at id dui.</p>
 
