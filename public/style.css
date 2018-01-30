@@ -105,6 +105,11 @@ form{
 	color : #666666;
 }
 
+#contenaire-link-page{
+	width : 25%;
+	margin : auto;
+}
+
 @media screen and (max-width: 640px) {
 	.ticket{
 		width : 90%;

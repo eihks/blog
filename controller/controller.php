@@ -4,7 +4,7 @@ require_once("model/commentManager.php");
 class Controller{
 	public static function homepage()
 	{
-		$postPerPage = 5;
+		$postPerPage = 3;
 		$postManager = new PostManager();
 		$totalPost = $postManager->getTotalRow();
 		$totalPage = ceil($totalPost/$postPerPage);
