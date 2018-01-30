@@ -32,7 +32,7 @@ if($_GET["page"] > 1)
 		<a class="a-ticket" href="index.php?action=postpage&title=<?= $data['title'] ?>&id_post=<?= $data['id']; ?> ">
 			<h2><?= htmlspecialchars($data["title"]); ?></h2>
 			<span class="text"><p><?= substr(htmlspecialchars($data["content"]), 0, 500) . "..."; ?></p></span>
-			<span class="author"><p><?= $data["author"]; ?></p></span><span class ="date"><p><?= $data["creation_date_fr"]; ?></p></span>
+			<div id="test"><div class="author"><p><?= $data["author"]; ?></p></div><div class ="date"><p><?= $data["creation_date_fr"]; ?></p></div></div>
 		</a>
 	</div>
 <?php
