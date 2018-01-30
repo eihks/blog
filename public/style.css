@@ -16,15 +16,16 @@ form{
 
 #contenaire_ticket{
 	width : 70%;
-	height : 100vh;
 	margin : auto;
+	display : flex;
+	justify-content: space-around;
 } /* fait */
 
 .ticket{
 	width : 25%;
 	height : 450px;
-	margin : auto;
 	margin-top : 20px;
+	margin-left: 2rem;
 	display : flex;
 	flex-direction: column;
 	justify-content: center;
@@ -108,9 +109,15 @@ form{
 #contenaire-link-page{
 	width : 25%;
 	margin : auto;
+	position : fixed;
+	bottom : 0;
+	right : 50%;
 }
 
 @media screen and (max-width: 640px) {
+	#contenaire_ticket{
+		display : block;
+	}
 	.ticket{
 		width : 90%;
 	}
