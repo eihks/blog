@@ -1,6 +1,7 @@
 <?php
 session_start();
-require("controller/controller.php");
+require_once("controller/frontend/controllerHomepage.php");
+require_once("controller/frontend/controllerPosts.php");
 
 try{
 	if(isset($_GET["action"]))
@@ -9,7 +10,7 @@ try{
 		{
 			if(isset($_GET["page"]) AND $_GET["page"] > 0)
 			{
-				Controller::homepage();
+				ControllerHomePage::homepage();
 			}
 			else
 			{
@@ -20,7 +21,7 @@ try{
 		{
 			if(isset($_GET["id_post"]) AND $_GET["id_post"] > 0)
 			{
-				Controller::postpage();
+				ControllerPosts::postpage();
 			}
 			else
 			{
@@ -31,7 +32,7 @@ try{
 		{
 			if(isset($_GET["id_post"]) AND $_GET["id_post"] > 0)
 			{
-				Controller::newcomment();
+				ControllerPosts::newcomment();
 			}
 			else
 			{
@@ -40,7 +41,7 @@ try{
 		}
 		elseif($_GET["action"] === "reportcomment")
 		{
-			Controller::reportComment();
+			ControllerPosts::reportComment();
 		}
 	}
 	else
