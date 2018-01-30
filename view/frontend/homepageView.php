@@ -43,7 +43,7 @@ if($_GET["page"] > 1)
 	<?php
 	for($i =1; $i <= $totalPage; $i++)
 	{
-		if($i = $_GET["page"])
+		if($i == $currentPage)
 		{
 			echo "<p>$i</p>";
 		}
