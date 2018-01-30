@@ -43,7 +43,14 @@ if($_GET["page"] > 1)
 	<?php
 	for($i =1; $i <= $totalPage; $i++)
 	{
-		echo "<a href='index.php?action=homepage&page=$i'>". $i ."</a>";
+		if($i = $_GET["page"])
+		{
+			echo "<p>$i</p>";
+		}
+		else
+		{
+			echo "<a href='index.php?action=homepage&page=$i'>". $i ."</a>";
+		}
 	}
 ?>
 </div>
