@@ -45,7 +45,7 @@ if($_GET["page"] > 1)
 	{
 		if($i == $currentPage)
 		{
-			echo "<p>$i</p>";
+			echo "".$i;
 		}
 		else
 		{
