@@ -17,23 +17,19 @@ form{
 #contenaire_ticket{
 	width : 70%;
 	margin : auto;
+	margin-bottom : 20px;
 	display : flex;
 	justify-content: space-around;
 } /* fait */
 
 .ticket{
 	width : 25%;
-	height : 450px;
+	height : 500px;
 	margin-top : 20px;
 	margin-left: 2rem;
-	display : flex;
-	flex-direction: column;
-	justify-content: center;
 	text-align: center;
 	background-color: white;
 	border-radius: 5px;
-	overflow: hidden;
-	position : relative;
 } /* fait */
 
 .ticket h2{
@@ -42,6 +38,8 @@ form{
 .text p{
 	text-align: justify;
 	width : 70%;
+	height : 76%;
+	overflow: hidden;
 	margin : 0 auto;
 	color : #666666;
 }
@@ -91,35 +89,35 @@ form{
 }
 
 .author{
-	position : absolute;
-	bottom : 0;
-	left : 0;
-	font-size : 0.6em;
+	font-size : 0.8em;
 	color : #666666;
+	margin-right : 20px;
 }
 
 .date{
-	position : absolute;
-	bottom : 0;
-	right : 0;
-	font-size : 0.6em;
+	font-size : 0.8em;
 	color : #666666;
+	background-color : white;
 }
 
 #contenaire-link-page{
-	width : 25%;
+	width : 50px;
 	margin : auto;
-	position : fixed;
-	bottom : 0;
-	right : 50%;
+	background-color : white;
+	color : #6666ff;
 }
 
-@media screen and (max-width: 640px) {
+#contenaire-link-page a{
+	color : #6666ff;
+	margin-left: 5px;
+}
+@media screen and (max-width: 1000px) {
 	#contenaire_ticket{
 		display : block;
 	}
 	.ticket{
 		width : 90%;
+		height : 30%;
 	}
 	.ticket p{
 		width : 90%;
