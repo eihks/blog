@@ -49,7 +49,7 @@ if($_GET["page"] > 1)
 		}
 		else
 		{
-			echo "<a href='index.php?action=homepage&page=$i'>". $i ."</a>";
+			echo "<a href='index.php?action=homepage&page=$i' title='Page $i'>". $i ."</a>";
 		}
 	}
 ?>
