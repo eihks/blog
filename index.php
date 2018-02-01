@@ -2,6 +2,7 @@
 session_start();
 require_once("controller/frontend/controllerHomepage.php");
 require_once("controller/frontend/controllerPosts.php");
+require_once("controller/backend/controllerAdminLogin.php");
 
 try{
 	if(isset($_GET["action"]))
@@ -42,6 +43,10 @@ try{
 		elseif($_GET["action"] === "reportcomment")
 		{
 			ControllerPosts::reportComment();
+		}
+		elseif($_GET["action"] === "administration")
+		{
+			ControllerAdminLogin::login();
 		}
 	}
 	else
