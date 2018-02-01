@@ -25,7 +25,6 @@ commentButton.addEventListener("click", function(){
 })
 
 buttonStopEdit.addEventListener("click",function(){
-	document.location.href="index.php?action=administration";
 	divEditPost.style.display = "none";
 	divForPosts.style.display = "block";
 })
