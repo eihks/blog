@@ -2,6 +2,7 @@ var ticketsButton = document.querySelector("#tickets-button");
 var commentButton = document.querySelector("#comments-button");
 var divForPosts = document.querySelector("#tickets-list");
 var divEditPost = document.querySelector("#edit-post");
+var buttonStopEdit = document.querySelector("#btn-stop-update");
 
 ticketsButton.addEventListener("click", function(){
 	try{
@@ -21,4 +22,10 @@ commentButton.addEventListener("click", function(){
 		console.log(e + " : La div n'a pas était chargé");
 	}
 	divForPosts.style.display = "none";
+})
+
+buttonStopEdit.addEventListener("click",function(){
+	document.location.href="index.php?action=administration";
+	divEditPost.style.display = "none";
+	divForPosts.style.display = "block";
 })
