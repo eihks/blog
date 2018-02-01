@@ -2,7 +2,7 @@
 session_start();
 require_once("controller/frontend/controllerHomepage.php");
 require_once("controller/frontend/controllerPosts.php");
-require_once("controller/backend/controllerAdminLogin.php");
+require_once("controller/backend/controllerAdmin.php");
 
 try{
 	if(isset($_GET["action"]))
@@ -46,7 +46,14 @@ try{
 		}
 		elseif($_GET["action"] === "administration")
 		{
-			ControllerAdminLogin::login();
+			if(isset($_GET["want"])  AND isset($_GET["id_post"]) AND $_GET["want"] === "editPost")
+			{
+				ControllerAdmin::editPost();
+			}
+			else
+			{
+				ControllerAdmin::login();
+			}
 		}
 	}
 	else
