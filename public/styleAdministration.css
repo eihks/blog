@@ -19,5 +19,15 @@
 }
 
 #menu-bar li{
-	font-size : 0.2em;
+	font-size : 1em;
+	cursor : pointer;
+}
+
+#tickets-list{
+	display : none;
+}
+
+#textarea-edit-comment{
+	width : 99%;
+	height : 500px;
 }
