@@ -3,11 +3,16 @@ $title = "Administration";
 $cssFile = "styleAdministration.css";
 ob_start();
 ?>
-<h1>Administration</h1>
-<div id="main-content-div"></div>
-<nav>
-	<div id="menu-bar"></div>
-</nav>
+<div id="page">
+	<div id="main-content-div"></div>
+		<div id="menu-bar">
+			<ul>
+				<li>Retourner sur la page d'accueil du blog</li>
+				<li id="tickets-button">Mes tickets</li>
+				<li id="comments-button">Gérer les commentaires</li>
+		</div>
+</div>
+<script src="public/adaptativeContent.js"></script>
 <?php
 $content = ob_get_clean();
 require("view/frontend/template.php");
