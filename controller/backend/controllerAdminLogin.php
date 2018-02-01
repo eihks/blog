@@ -6,7 +6,7 @@ class controllerAdminLogin{
 		if(isset($_POST["password"]) AND password_verify($_POST["password"], $passwordHash))
 		{
 			echo "ok";
-			require("view/backend/loginView.php");
+			require("view/backend/administrationView.php");
 		}
 		else
 		{
