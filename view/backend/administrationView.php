@@ -15,6 +15,7 @@ ob_start();
 				<?php 
 				}
 				?>
+			</ul>
 		</div>
 			
 	</div>
