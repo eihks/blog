@@ -13,6 +13,8 @@ ob_start();
 		<div id="edit-post">
 			<form action="#" method="POST">
 				<textarea id="textarea-edit-post"><?= $data["content"]; ?></textarea>
+				<button type="submit" id="btn-update-ticket">Mettre à jour</button>
+				<button type="button" id="btn-stop-update">Annuler</button>
 			</form>
 		</div>
 		<?php
