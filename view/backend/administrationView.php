@@ -12,7 +12,7 @@ ob_start();
 		?>
 		<div id="edit-post">
 			<form action="#" method="POST">
-				<textarea id="textarea-edit-comment"><?= $data["content"]; ?></textarea>
+				<textarea id="textarea-edit-post"><?= $data["content"]; ?></textarea>
 			</form>
 		</div>
 		<?php
