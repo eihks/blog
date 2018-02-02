@@ -32,4 +32,16 @@ class PostManager extends Manager{
 		$posts = $db->query("SELECT id, author, title, content, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM tickets ORDER BY id");
 		return $posts;
 	}
+
+	public function updatePost($title, $content, $id_post)
+	{
+		$db = $this->db();
+		$post = $db->prepare("UPDATE tickets SET title = :title, content = :content WHERE id = :id");
+		$post->execute(array(
+			"title" => $title,
+			"content" => $content,
+			"id" => $id_post
+		));
+		return $post;
+	}
 }
