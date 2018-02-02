@@ -11,7 +11,7 @@ ob_start();
 			$data = $post->fetch();
 		?>
 		<div id="edit-post">
-			<form action="#" method="POST">
+			<form action="index.php?action=updatePost" method="POST">
 				<textarea id="textarea-edit-post"><?= $data["content"]; ?></textarea>
 				<button type="submit" id="btn-update-ticket">Mettre à jour</button>
 				<button type="button" id="btn-stop-update">Annuler</button>
@@ -26,7 +26,7 @@ ob_start();
 				while($data = $posts->fetch())
 				{
 				?>
-				<li><a href="index.php?action=administration&want=editPost&id_post=<?= $data['id']; ?>"><?= $data["title"]; ?></a></li>
+				<li><a href="index.php?action=administration&id_post=<?= $data['id']; ?>"><?= $data["title"]; ?></a></li>
 				<?php 
 				}
 				?>
