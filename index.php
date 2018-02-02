@@ -46,7 +46,7 @@ try{
 		}
 		elseif($_GET["action"] === "administration")
 		{
-			if(isset($_GET["want"])  AND isset($_GET["id_post"]) AND $_GET["want"] === "editPost")
+			if(isset($_GET["id_post"]) AND $_GET["id_post"] > 0)
 			{
 				ControllerAdmin::editPost();
 			}
@@ -54,6 +54,10 @@ try{
 			{
 				ControllerAdmin::login();
 			}
+		}
+		elseif($_GET["action"] === "updatePost")
+		{
+			ControllerAdmin::updatePost();
 		}
 	}
 	else
