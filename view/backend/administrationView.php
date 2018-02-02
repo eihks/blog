@@ -6,13 +6,15 @@ ob_start();
 <div id="page">
 	<div id="main-content-div">
 		<?php 
-		if(isset($_GET["want"]) AND isset($_GET["id_post"]) AND $_GET["want"] === "editPost")
+		if(isset($_GET["id_post"]))
 		{
 			$data = $post->fetch();
+			echo $data["id"];
 		?>
 		<div id="edit-post">
-			<form action="index.php?action=updatePost" method="POST">
-				<textarea id="textarea-edit-post"><?= $data["content"]; ?></textarea>
+			<form action="index.php?action=updatePost&id_post= <?= $data['id']; ?>" method="POST">
+				<input type="text" name="title" value="<?= $data['title'] ?>"><br>
+				<textarea id="textarea-edit-post" name="content"><?= $data["content"]; ?></textarea>
 				<button type="submit" id="btn-update-ticket">Mettre à jour</button>
 				<button type="button" id="btn-stop-update">Annuler</button>
 			</form>
