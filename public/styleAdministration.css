@@ -21,6 +21,7 @@
 #menu-bar li{
 	font-size : 1em;
 	cursor : pointer;
+	list-style-type: none;
 }
 
 #tickets-list{
