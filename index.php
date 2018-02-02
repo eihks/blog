@@ -46,7 +46,7 @@ try{
 		}
 		elseif($_GET["action"] === "administration")
 		{
-			if(isset($_GET["id_post"])
+			if(isset($_GET["id_post"]))
 			{
 				if($_GET["id_post"] > 0)
 				{
