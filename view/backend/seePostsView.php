@@ -1,0 +1,21 @@
+<?php
+$title = "Administration";
+ob_start();
+?>
+<div id="posts-list">
+	<button type="button" id="btn-new-post">Nouveau Ticket</button>
+	<ul>
+		<?php 
+		while($data = $posts->fetch())
+		{
+		?>
+		<li><a href="index.php?action=administration&id_post=<?= $data['id']; ?>"><?= $data["title"]; ?></a></li>
+		<?php 
+		}
+		?>
+	</ul>
+</div>
+<?php
+$content = ob_get_clean();
+require("view/backend/template.php");
+?>
