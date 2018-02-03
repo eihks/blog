@@ -9,7 +9,6 @@ ob_start();
 		if(isset($_GET["id_post"]))
 		{
 			$data = $post->fetch();
-			echo $data["id"];
 		?>
 		<div id="edit-post">
 			<form action="index.php?action=updatePost&id_post= <?= $data['id']; ?>" method="POST">
@@ -23,6 +22,7 @@ ob_start();
 		}
 		?>
 		<div id="tickets-list">
+			<button type="button" id="btn-new-post">Nouveau Ticket</button>
 			<ul>
 				<?php 
 				while($data = $posts->fetch())
@@ -34,13 +34,18 @@ ob_start();
 				?>
 			</ul>
 		</div>
-			
+		<div id="new-post-div">
+			<form action="index.php?action=createPost" method="POST">
+				<textarea name="content"></textarea>
+				<button type="submit"></button>
+			</form>
+		</div>			
 	</div>
 		<div id="menu-bar">
 			<ul>
-				<li>Retourner sur la page d'accueil du blog</li>
-				<li id="tickets-button">Mes tickets</li>
-				<li id="comments-button">Gérer les commentaires</li>
+				<a href="index.php"><li>Retourner sur la page d'accueil du blog</li></a>
+				<a href="index.php?action=administration&want=seePosts"><li id="tickets-button">Mes tickets</li></a>
+				<a href="index.php?action=administration&want=seeComments"><li id="comments-button">Gérer les commentaires</li></a>
 			</ul>
 		</div>
 </div>
