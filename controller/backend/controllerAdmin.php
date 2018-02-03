@@ -5,9 +5,7 @@ class controllerAdmin{
 	{
 		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
 		{
-			$postManager = new PostManager();
-			$posts = $postManager->getPosts();
-			require("view/backend/administrationView.php");
+			require("view/backend/administrationHomepage.php");
 		}
 		else
 		{
@@ -16,9 +14,7 @@ class controllerAdmin{
 			if(isset($_POST["password"]) AND password_verify($_POST["password"], $passwordHash))
 			{
 				$_SESSION["isLog"] = true;
-				$postManager = new PostManager();
-				$posts = $postManager->getPosts();
-				require("view/backend/administrationView.php");
+				require("view/backend/administrationHomepage.php");
 			}
 			else
 			{
@@ -26,6 +22,20 @@ class controllerAdmin{
 				echo $passwordHash;
 				require("view/backend/loginView.php");
 			}
+		}
+	}
+
+	public static function seePosts()
+	{
+		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		{
+			$postManager = new PostManager();
+			$posts = $postManager->getPosts();
+			require("view/backend/seePostsView.php");
+		}
+		else
+		{
+			require("view/backend/loginView.php");
 		}
 	}
 
