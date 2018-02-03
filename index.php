@@ -46,15 +46,11 @@ try{
 		}
 		elseif($_GET["action"] === "administration")
 		{
-			if(isset($_GET["id_post"]))
+			if(isset($_GET["want"]))
 			{
-				if($_GET["id_post"] > 0)
+				if($_GET["want"] === "seePosts")
 				{
-					ControllerAdmin::editPost();
-				}
-				else
-				{
-					throw new Exception("Aucun identifiant de billet envoyé");
+					ControllerAdmin::seePosts();
 				}
 			}
 			else
