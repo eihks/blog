@@ -9,7 +9,7 @@ ob_start();
 		while($data = $posts->fetch())
 		{
 		?>
-		<li><a href="index.php?action=administration&id_post=<?= $data['id']; ?>"><?= $data["title"]; ?></a></li>
+		<li><a href="index.php?action=administration&id_post=<?= $data['id']; ?>"><?= $data["title"]; ?><i class="fas fa-edit"></i></a></li>
 		<?php 
 		}
 		?>
