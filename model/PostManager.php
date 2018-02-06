@@ -44,4 +44,15 @@ class PostManager extends Manager{
 		));
 		return $post;
 	}
+
+	public function insertPost($title, $content)
+	{
+		$db = $this->db();
+		$post = $db->prepare("INSERT INTO tickets(title, content, creation_date) VALUES(:title, :content, NOW())");
+		$post->execute(array(
+			"title" => $title,
+			"content" => $content
+		));
+		return $post;
+	}
 }
