@@ -1,6 +1,6 @@
 <?php
 require_once("model/PostManager.php");
-class controllerAdmin{
+class ControllerAdmin{
 	public static function login()
 	{
 		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
@@ -65,5 +65,31 @@ class controllerAdmin{
 		{
 			throw new Exception("Vous n'étes pas connecter ! ");
 		}
+	}
+
+	public static function newPost()
+	{
+		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		{
+			require("view/backend/editPostView.php");
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter ! ");
+		}
+	}
+
+	public static function insertPost()
+	{
+		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		{
+			$postManager = new PostManager();
+			$post = $postManager->insertPost($_POST["title"], $_POST["content"]);
+			header("Location: index.php?action=administration");
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter ! ");
+		}	
 	}
 }
