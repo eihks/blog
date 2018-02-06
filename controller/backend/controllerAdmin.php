@@ -92,4 +92,18 @@ class ControllerAdmin{
 			throw new Exception("Vous n'étes pas connecter ! ");
 		}	
 	}
+
+	public static function deletePost()
+	{
+		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		{
+			$postManager = new PostManager();
+			$post = $postManager->deletePost();
+			header("Location: index.php?action=administration");
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter ! ");
+		}	
+	}
 }
