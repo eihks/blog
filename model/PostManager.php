@@ -55,4 +55,13 @@ class PostManager extends Manager{
 		));
 		return $post;
 	}
+
+	public function deletePost()
+	{
+		$db = $this->db();
+		$post = $db->prepare("DELETE FROM tickets WHERE id = :id");
+		$post->execute(array(
+			"id" => $_GET["id_post"]
+		));
+	}
 }
