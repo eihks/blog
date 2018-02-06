@@ -45,9 +45,7 @@ class controllerAdmin{
 		{
 			$postManager = new PostManager();
 			$post = $postManager->getPost();
-			$postManager = new PostManager();
-			$posts = $postManager->getPosts();
-			require("view/backend/administrationView.php");
+			require("view/backend/editPostView.php");
 		}
 		else
 		{
