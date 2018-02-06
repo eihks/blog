@@ -3,7 +3,7 @@ $title = "Administration";
 ob_start();
 ?>
 <div id="posts-list">
-	<button type="button" id="btn-new-post">Nouveau Ticket</button>
+	<a href="index.php?action=administration&want=newPost"><button type="button" id="btn-new-post">Nouveau Ticket</button></a>
 	<ul>
 		<?php 
 		while($data = $posts->fetch())
