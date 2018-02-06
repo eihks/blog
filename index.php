@@ -74,6 +74,10 @@ try{
 						ControllerAdmin::newPost();
 					}
 				}
+				elseif($_GET["want"] === "deletePost" AND $_GET["id_post"] > 0)
+				{
+					ControllerAdmin::deletePost();
+				}
 			}
 			else
 			{
