@@ -6,14 +6,25 @@ ob_start();
 	<a href="index.php?action=administration&want=newPost"><button type="button" id="btn-new-post">Nouveau Ticket</button></a>
 	<ul>
 		<?php 
-		while($data = $posts->fetch())
+		while($datas = $posts->fetch())
 		{
 		?>
-		<li><a href="index.php?action=administration&want=editPost&id_post=<?= $data['id']; ?>"><?= $data["title"]; ?><i class="fas fa-edit"></i></a></li>
+		<li><a href="index.php?action=administration&want=editPost&id_post=<?= $datas['id']; ?>"><?= $datas["title"]; ?><i class="fas fa-edit"></i></a><a href="index.php?action=administration&want=deletePost&id_post=<?= $datas['id']; ?>"><i class="fas fa-trash-alt delete-btn"></i></a></li>
 		<?php 
 		}
 		?>
 	</ul>
+	<script>
+		var deleteBtns = document.querySelectorAll(".delete-btn");
+		for(var i=0; i < deleteBtns.length; i++)
+		{
+			deleteBtns[i].addEventListener("click", function(e){
+				if(confirm("Attention cette action est définitive, voulez-vous vraiment supprimer ce ticket <?= $datas['id'] ?> ?") == false){
+					e.preventDefault();
+				}
+			})
+		}
+	</script>
 </div>
 <?php
 $content = ob_get_clean();
