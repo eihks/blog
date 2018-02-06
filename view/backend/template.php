@@ -3,6 +3,7 @@
 		<head>
 			<meta charset="utf-8" />
 			<link rel="stylesheet" href="public/styleAdministration.css" />
+			<link rel="stylesheet" href="public/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all">
 			<title><?= $title; ?></title>
 		</head>
 
