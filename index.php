@@ -63,6 +63,17 @@ try{
 						ControllerAdmin::editPost();
 					}
 				}
+				elseif($_GET["want"] === "newPost")
+				{
+					if(isset($_POST["title"]) AND isset($_POST["content"]))
+					{
+						ControllerAdmin::insertPost();
+					}
+					else
+					{
+						ControllerAdmin::newPost();
+					}
+				}
 			}
 			else
 			{
