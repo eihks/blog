@@ -52,6 +52,17 @@ try{
 				{
 					ControllerAdmin::seePosts();
 				}
+				elseif($_GET["want"] === "editPost" AND $_GET["id_post"] > 0)
+				{
+					if(isset($_POST["title"]) AND isset($_POST["content"]))
+					{
+						ControllerAdmin::updatePost();
+					}
+					else
+					{
+						ControllerAdmin::editPost();
+					}
+				}
 			}
 			else
 			{
