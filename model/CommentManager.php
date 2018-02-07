@@ -29,4 +29,11 @@ class CommentManager extends Manager{
 		));
 		return $comment;
 	}
+
+	public function getReportedComments()
+	{
+		$db = $this->db();
+		$comments = $db->query("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments WHERE report_level > 0 ORDER BY report_level DESC");
+		return $comments;
+	}
 }
