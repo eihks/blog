@@ -82,6 +82,10 @@ try{
 				{
 					ControllerAdmin::seeComments();
 				}
+				elseif($_GET["want"] === "controlComment" AND $_GET["comment_id"] > 0)
+				{
+					ControllerAdmin::controlComment();
+				}
 			}
 			else
 			{
