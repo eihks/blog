@@ -1,4 +1,5 @@
 <?php
+require_once("model/CommentManager.php");
 require_once("model/PostManager.php");
 class ControllerAdmin{
 	public static function login()
@@ -100,6 +101,20 @@ class ControllerAdmin{
 			$postManager = new PostManager();
 			$post = $postManager->deletePost();
 			header("Location: index.php?action=administration");
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter ! ");
+		}	
+	}
+
+	public static function seeComments()
+	{
+		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		{
+			$commentManager = new CommentManager();
+			$comments = $commentManager->getReportedComments();
+			require("view/backend/seeCommentsView.php");
 		}
 		else
 		{
