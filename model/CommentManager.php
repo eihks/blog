@@ -36,4 +36,14 @@ class CommentManager extends Manager{
 		$comments = $db->query("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments WHERE report_level > 0 ORDER BY report_level DESC");
 		return $comments;
 	}
+
+	public function getComment()
+	{
+		$db = $this->db();
+		$comment = $db->prepare("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments WHERE id = :id");
+		$comment->execute(array(
+			"id" => $_GET["comment_id"]
+		));
+		return $comment;
+	}
 }
