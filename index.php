@@ -78,6 +78,10 @@ try{
 				{
 					ControllerAdmin::deletePost();
 				}
+				elseif($_GET["want"] === "seeComments")
+				{
+					ControllerAdmin::seeComments();
+				}
 			}
 			else
 			{
