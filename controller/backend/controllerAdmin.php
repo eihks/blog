@@ -121,4 +121,18 @@ class ControllerAdmin{
 			throw new Exception("Vous n'étes pas connecter ! ");
 		}	
 	}
+
+	public static function controlComment()
+	{
+	if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+	{
+		$commentManager = new CommentManager();
+		$comment = $commentManager->getComment();
+		require("view/backend/seeCommentView.php");
+	}
+	else
+	{
+		throw new Exception("Vous n'étes pas connecter ! ");
+	}	
+	}
 }
