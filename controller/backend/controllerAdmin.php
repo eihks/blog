@@ -154,9 +154,18 @@ class ControllerAdmin{
 	{
 		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
 		{
-			$commentManager = new CommentManager();
-			$comment = $commentManager->getComment();
-			require("view/backend/editCommentView.php");
+			if(isset($_POST["content"]))
+			{
+				$commentManager = new CommentManager();
+				$comment = $commentManager->editComment();
+				header("Location: index.php?action=administration&want=controlComment&comment_id=" . $_GET["comment_id"]);
+			}
+			else
+			{
+				$commentManager = new CommentManager();
+				$comment = $commentManager->getComment();
+				require("view/backend/editCommentView.php");
+			}
 		}
 		else
 		{
