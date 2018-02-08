@@ -56,4 +56,15 @@ class CommentManager extends Manager{
 		));
 		return $comment;
 	}
+
+	public function editComment()
+	{
+		$db = $this->db();
+		$comment = $db->prepare("UPDATE comments SET content = :content WHERE id = :id");
+		$comment->execute(array(
+			"content" => $_POST["content"],
+			"id" => $_GET["comment_id"]
+		));
+		return $comment;
+	}
 }
