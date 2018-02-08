@@ -67,4 +67,14 @@ class CommentManager extends Manager{
 		));
 		return $comment;
 	}
+
+	public function confirmComment()
+	{
+		$db = $this->db();
+		$comment = $db->prepare("UPDATE comments SET report_level = 0 WHERE id = :id");
+		$comment->execute(array(
+			"id" => $_GET["comment_id"]
+		));
+		return $comment;
+	}
 }
