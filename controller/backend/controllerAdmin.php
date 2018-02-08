@@ -149,4 +149,18 @@ class ControllerAdmin{
 			throw new Exception("Vous n'étes pas connecter ! ");
 		}		
 	}
+
+	public static function editComment()
+	{
+		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		{
+			$commentManager = new CommentManager();
+			$comment = $commentManager->editComment();
+			require("view/backend/editCommentView.php");
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter ! ");
+		}	
+	}
 }
