@@ -90,6 +90,10 @@ try{
 				{
 					ControllerAdmin::deleteComment();
 				}
+				elseif($_GET["want"] === "editComment" AND $_GET["comment_id"] > 0)
+				{
+					ControllerAdmin::editComment();
+				}
 			}
 			else
 			{
