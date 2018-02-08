@@ -124,15 +124,29 @@ class ControllerAdmin{
 
 	public static function controlComment()
 	{
-	if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
-	{
-		$commentManager = new CommentManager();
-		$comment = $commentManager->getComment();
-		require("view/backend/seeCommentView.php");
+		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		{
+			$commentManager = new CommentManager();
+			$comment = $commentManager->getComment();
+			require("view/backend/seeCommentView.php");
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter ! ");
+		}	
 	}
-	else
+
+	public static function deleteComment()
 	{
-		throw new Exception("Vous n'étes pas connecter ! ");
-	}	
+		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		{
+			$commentManager = new CommentManager();
+			$comment = $commentManager->deleteComment();
+			header("Location: index.php?action=administration&want=seeComments");
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter ! ");
+		}		
 	}
 }
