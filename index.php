@@ -94,6 +94,10 @@ try{
 				{
 					ControllerAdmin::editComment();
 				}
+				elseif($_GET["want"] === "confirmComment" AND $_GET["comment_id"] > 0)
+				{
+					ControllerAdmin::confirmComment();
+				}
 			}
 			else
 			{
