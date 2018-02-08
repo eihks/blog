@@ -155,7 +155,7 @@ class ControllerAdmin{
 		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
 		{
 			$commentManager = new CommentManager();
-			$comment = $commentManager->editComment();
+			$comment = $commentManager->getComment();
 			require("view/backend/editCommentView.php");
 		}
 		else
