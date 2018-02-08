@@ -86,6 +86,10 @@ try{
 				{
 					ControllerAdmin::controlComment();
 				}
+				elseif($_GET["want"] === "deleteComment" AND $_GET["comment_id"] > 0)
+				{
+					ControllerAdmin::deleteComment();
+				}
 			}
 			else
 			{
