@@ -172,4 +172,18 @@ class ControllerAdmin{
 			throw new Exception("Vous n'étes pas connecter ! ");
 		}	
 	}
+
+	public static function confirmComment()
+	{
+		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		{
+			$commentManager = new CommentManager();
+			$comment = $commentManager->confirmComment();
+			header("Location: index.php?action=administration&want=seeComments");
+		}
+		else
+		{
+			throw new Exception("Vous n'étes pas connecter ! ");
+		}
+	}
 }
