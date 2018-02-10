@@ -105,10 +105,13 @@ h1, h2, h3, h4, h5, h6{
 /* ============================== CONTROL COMMENT =============================== */
 #comment-date-contenair{
 	text-align : center;
+}
+
+#comment-date-contenair p{
 	display : inline;
 }
 
-#comment-content-contenair{
+#p-comment-content{
 	text-align : center;
 }
 
