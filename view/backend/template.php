@@ -4,6 +4,13 @@
 			<meta charset="utf-8" />
 			<link rel="stylesheet" href="public/styleAdministration.css" />
 			<link rel="stylesheet" href="public/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all">
+			<script type="text/javascript" src="public/tinymce/js/tinymce/tinymce.min.js"></script>
+			<script type="text/javascript">
+			  tinyMCE.init({
+			    mode : "specific_textareas",
+			    elements : "admin-editor"
+			  });
+			  </script>
 			<title><?= $title; ?></title>
 		</head>
 
