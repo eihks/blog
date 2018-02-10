@@ -101,3 +101,21 @@ h1, h2, h3, h4, h5, h6{
 #comments-contenair a:hover{
 	font-weight : bold;
 }
+
+/* ============================== CONTROL COMMENT =============================== */
+#comment-date-contenair{
+	text-align : center;
+	display : inline;
+}
+
+#comment-content-contenair{
+	text-align : center;
+}
+
+.fa-check-circle{
+	color : green;
+}
+
+.delete-btn{
+	color : red;
+}
