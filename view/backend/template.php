@@ -7,8 +7,8 @@
 			<script type="text/javascript" src="public/tinymce/js/tinymce/tinymce.min.js"></script>
 			<script type="text/javascript">
 			  tinyMCE.init({
-			    mode : "specific_textareas",
-			    elements : "admin-editor"
+			    mode : "textareas",
+			    editor_selector : "mceEditor"
 			  });
 			  </script>
 			<title><?= $title; ?></title>
