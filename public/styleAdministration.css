@@ -84,3 +84,20 @@ h1, h2, h3, h4, h5, h6{
 	width : 150px;
 	height : 30px;
 }
+
+/* ============================== REPORTED COMMENT LIST =============================== */
+
+#comments-contenair li{
+	list-style-type : none;
+	margin-bottom : 15px;
+}
+
+#comments-contenair a{
+	text-decoration : none;
+	color : #666666;
+	font-size : 0.9em;
+}
+
+#comments-contenair a:hover{
+	font-weight : bold;
+}
