@@ -20,6 +20,13 @@ $data = $comment->fetch();
 			e.preventDefault();
 		}
 	})
+
+	document.querySelector("#confirm-comment-btn").addEventListener("click", function(e){
+		if(confirm("Voulez-vous vraiment confirmer ce commentaire ? Après confirmation ce commentaire n'apparaitra plus comme un commentaire signalé. \nContinuer ?") == false)
+		{
+			e.preventDefault();
+		}
+	})
 </script>
 <?php
 $content = ob_get_clean();
