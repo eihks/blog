@@ -8,7 +8,8 @@
 			<script type="text/javascript">
 			  tinyMCE.init({
 			    mode : "textareas",
-			    editor_selector : "mceEditor"
+			    editor_selector : "mceEditor",
+			    width : "100%"
 			  });
 			  </script>
 			<title><?= $title; ?></title>
