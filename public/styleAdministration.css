@@ -1,13 +1,27 @@
+/* ============================== TEMPLATE =============================== */
+body{
+	background-color: #f3f3f3;
+	font-family: sans-serif;
+	color : #666666;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color : #6666ff;
+	font-family: serif;
+}
+
 #main-content-div{
 	width : 70%;
 	height : 1000px;
 	border : 1px solid black;
+	background-color : white;
 }
 
 #menu-bar{
 	width : 20%;
 	height : 1000px;
 	border : 1px solid black;
+	background-color : white;
 }
 
 #page{
@@ -19,13 +33,30 @@
 }
 
 #menu-bar li{
-	font-size : 1em;
+	font-size: 1.1em;
 	cursor : pointer;
 	list-style-type: none;
+	margin-bottom : 25px;
+	color : #6666ff;
 }
+
+#menu-bar a{
+	text-decoration : none;
+	font-size : 1.1em;
+}
+
+#menu-bar a:hover{
+	font-weight : bold;
+}
+
 
 #tickets-list{
 	display : none;
+}
+
+/* ============================== HOMEPAGE =============================== */
+#h1-homepage{
+	text-align : center;
 }
 
 #textarea-edit-post{
