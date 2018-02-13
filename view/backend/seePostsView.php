@@ -19,7 +19,7 @@ ob_start();
 				$color = "#eef5fc";
 			}
 		?>
-		<li style="background-color : <?= $color; ?>"><a href="index.php?action=administration&want=editPost&id_post=<?= $datas['id']; ?>" title="Editer le ticket"><?= $datas["title"]; ?></a><a href="index.php?action=administration&want=editPost&id_post=<?= $datas['id']; ?>" title="Editer le ticket"><i class="fas fa-edit"></i></a><a href="index.php?action=administration&want=deletePost&id_post=<?= $datas['id']; ?>" title="Supprimer le ticket"><i class="fas fa-trash-alt delete-btn"></i></a></li>
+		<li style="background-color : <?= $color; ?>"><a href="index.php?action=administration&want=editPost&id_post=<?= $datas['id']; ?>" title="Editer le ticket"><?= $datas["title"]; ?></a><span><a href="index.php?action=administration&want=editPost&id_post=<?= $datas['id']; ?>" title="Editer le ticket"><i class="fas fa-edit"></i></a><a href="index.php?action=administration&want=deletePost&id_post=<?= $datas['id']; ?>" title="Supprimer le ticket"><i class="fas fa-trash-alt delete-btn"></i></a></span></li>
 		<?php 
 		}
 		?>
