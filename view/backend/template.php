@@ -9,7 +9,8 @@
 			  tinyMCE.init({
 			    mode : "textareas",
 			    editor_selector : "mceEditor",
-			    width : "100%"
+			    width : "100%",
+			    branding : false
 			  });
 			  </script>
 			<title><?= $title; ?></title>
