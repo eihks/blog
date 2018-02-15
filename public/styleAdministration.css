@@ -5,7 +5,7 @@ body{
 	color : #666666;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, label{
 	color : #6666ff;
 	font-family: serif;
 }
@@ -161,4 +161,17 @@ h1, h2, h3, h4, h5, h6{
 
 #btn-new-post:hover{
 	background-color : #4d4dff;
+}
+
+.label-title-input{
+	display : block;
+	text-align : center;
+	font-weight : bold;
+	font-size : 1.3em;
+	margin : 0;
+}
+
+
+#input-title{
+	width : 99%;
 }
