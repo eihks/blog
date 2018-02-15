@@ -8,7 +8,7 @@ $data = $comment->fetch();
 	<form action="index.php?action=administration&want=editComment&comment_id= <?= $data['id']; ?>" method="POST">
 		<textarea id="textarea-edit-comment" class="mceEditor" name="content"><?= $data["content"]; ?></textarea>
 		<button type="submit" class="btn-update">Mettre à jour</button>
-		<a href="index.php?action=administration&want=seeComments"><button type="button" id="btn-stop-update">Annuler</button></a>
+		<a href="index.php?action=administration&want=seeComments"><button type="button" class="btn-cancel">Annuler</button></a>
 	</form>
 </div>
 
@@ -16,3 +16,13 @@ $data = $comment->fetch();
 $content = ob_get_clean();
 require("view/backend/template.php");
 ?>
+
+<script type="text/javascript">
+	var btnCancel = document.querySelector(".btn-cancel");
+		btnCancel.addEventListener("click", function(e){
+			if(confirm("Voulez-vous vraiment annuler l'édition ?") == false)
+			{
+				e.preventDefault();
+			}
+		})
+</script>
