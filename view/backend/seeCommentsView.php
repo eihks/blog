@@ -39,6 +39,13 @@ ob_start();
 			e.preventDefault();
 		}
 	})
+
+	document.querySelector("#delete-comment-btn").addEventListener("click", function(e){
+		if(confirm("Attention cette action est définitive, voulez-vous vraiment supprimer ce commentaire ?") == false)
+		{
+			e.preventDefault();
+		}
+	})
 </script>
 <?php
 if($i === 0)
