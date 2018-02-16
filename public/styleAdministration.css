@@ -107,6 +107,10 @@ h1, h2, h3, h4, h5, h6, label{
 	font-weight : bold;
 }
 
+.p-Nreport{
+	margin : 0;
+}
+
 /* ============================== CONTROL COMMENT =============================== */
 #comment-date-contenair{
 	text-align : center;
@@ -129,7 +133,7 @@ h1, h2, h3, h4, h5, h6, label{
 }
 
 /* ============================== POSTS LIST =============================== */
-#posts-list li{
+#posts-list li, #comments-contenair li{
 	list-style-type: none;
 	margin-bottom : 10px;
 	padding : 10px;
@@ -169,9 +173,4 @@ h1, h2, h3, h4, h5, h6, label{
 	font-weight : bold;
 	font-size : 1.3em;
 	margin : 0;
-}
-
-
-#input-title{
-	width : 99%;
 }
