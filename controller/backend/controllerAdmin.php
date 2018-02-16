@@ -158,7 +158,7 @@ class ControllerAdmin{
 			{
 				$commentManager = new CommentManager();
 				$comment = $commentManager->editComment();
-				header("Location: index.php?action=administration&want=controlComment&comment_id=" . $_GET["comment_id"]);
+				header("Location: index.php?action=administration&want=seeComments");
 			}
 			else
 			{
