@@ -21,7 +21,7 @@ $dataC = $comment->fetch();
 
 <div id="last-comment">
 	<h2>Dernier Commentaire</h2>
-	<p><?= $dataC["content"]; ?></p>
+	<p><a href="index.php?action=postpage&id_post=<?= $dataC['id_post']; ?>"><?= $dataC["content"]; ?></a></p>
 </div>
 <?php
 $content = ob_get_clean();
