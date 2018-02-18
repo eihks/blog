@@ -8,10 +8,10 @@ ob_start();
 	$data = $post->fetch();
 ?>
 	<div class="ticket">
-		<span class="title"><h1><?= htmlspecialchars($data["title"]); ?></h1></span>
-		<span class="text"><p><?= nl2br(htmlspecialchars($data["content"])); ?></p></span>
-		<span class="author"><p><?= htmlspecialchars($data["author"]); ?></p></span>
-		<span class ="date"><p><?= htmlspecialchars($data["creation_date_fr"]); ?></p></span>
+		<span class="title"><h1><?= $data["title"]; ?></h1></span>
+		<span class="text"><p><?= $data["content"]; ?></p></span>
+		<span class="author"><p><?= $data["author"]; ?></p></span>
+		<span class ="date"><p><?= $data["creation_date_fr"]; ?></p></span>
 	</div>
 </div>
 
