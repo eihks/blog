@@ -64,4 +64,11 @@ class PostManager extends Manager{
 			"id" => $_GET["id_post"]
 		));
 	}
+
+	public function getLastPost()
+	{
+		$db = $this->db();
+		$post = $db->query("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM tickets ORDER BY id LIMIT 1");
+		return $post;
+	}
 }
