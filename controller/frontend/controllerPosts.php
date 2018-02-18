@@ -26,7 +26,7 @@ class ControllerPosts{
 				if($reportid === $_GET["id"])
 				{
 					$_SESSION["alreadyReported"] = true;
-					header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]);
+					header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]. "&title=" .$_GET["title"]);				
 					throw new Exception("Commentaire déjà signalé");
 				}
 			}
@@ -35,7 +35,7 @@ class ControllerPosts{
 			setcookie("reportedCommentList", $cookieSerialize, time() + (31556926)); //31556926 = total seconds in one year
 			$commentManager = new CommentManager();
 			$reportedComment = $commentManager->reportComment();
-			header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]);					
+			header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]. "&title=" .$_GET["title"]);				
 		}
 		else
 		{
@@ -44,7 +44,7 @@ class ControllerPosts{
 			setcookie("reportedCommentList", $tableReportCommentSerialize, time() + (31556926));
 			$commentManager = new CommentManager();
 			$reportedComment = $commentManager->reportComment();
-			header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]);
+			header("Location: index.php?action=postpage&id_post=" . $_GET['id_post'] . "&title=" . $_GET['title']);
 		}
 	}
 }
