@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6, label{
 }
 
 #menu-bar li{
-	font-size: 1.1em;
+	font-size: 1em;
 	cursor : pointer;
 	list-style-type: none;
 	margin-bottom : 25px;
@@ -49,6 +49,7 @@ h1, h2, h3, h4, h5, h6, label{
 
 #menu-bar a:hover{
 	font-weight : bold;
+	font-size : 1.1em;
 }
 
 
