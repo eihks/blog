@@ -142,6 +142,11 @@ h1, h2, h3, h4, h5, h6, label{
 #last-comment > h2{
 	text-align: center;
 }
+
+#last-comment  a{
+	text-decoration : none;
+	color : inherit;
+}
 /* ============================== REPORTED COMMENT LIST =============================== */
 
 #comments-contenair li{
