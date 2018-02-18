@@ -34,7 +34,7 @@ if($_GET["page"] > 1)
 			<span class="text">
 				<p><?= substr($data["content"], 0, 500) . "..."; ?></p>
 			</span>
-			<div id="test"><div class="author"><p><?= $data["author"]; ?></p></div><div class ="date"><p><?= $data["creation_date_fr"]; ?></p></div></div>
+			<div id="contenair-credit"><div class="author"><p><?= $data["author"]; ?></p></div><div class ="date"><p><?= $data["creation_date_fr"]; ?></p></div></div>
 		</a>
 	</div>
 <?php
