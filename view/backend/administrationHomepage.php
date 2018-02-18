@@ -20,7 +20,14 @@ $dataC = $comment->fetch();
 </div>
 
 <div id="last-comment">
-	<h2>Dernier Commentaire</h2>
+	<h2>
+		Dernier Commentaire
+		<span>
+			<a href="index.php?action=administration&want=deleteComment&comment_id=<?= $dataC['id']; ?>" title="Supprimer le commentaire" id="delete-comment-btn"><i class="fas fa-trash-alt delete-ico fa-xs"></i></a>
+			<a href="index.php?action=administration&want=editComment&comment_id=<?= $dataC['id']; ?>" title="Editer le commentaire" id="edit-comment-btn"><i class="fas fa-edit edit-ico fa-xs"></i></a>
+			<a href="index.php?action=administration&want=confirmComment&comment_id=<?= $dataC['id']; ?>" title="Valider le commentaire" id="confirm-comment-btn"><i class="fas fa-check-circle confirm-ico fa-xs"></i></a>
+		</span>
+	</h2>
 	<p><a href="index.php?action=postpage&id_post=<?= $dataC['id_post']; ?>"><?= $dataC["content"]; ?></a></p>
 </div>
 <?php
