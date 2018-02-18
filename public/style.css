@@ -35,7 +35,8 @@ form{
 .ticket h2{
 	font-weight : bold;
 }
-.text p{
+.text{
+	display : block;
 	text-align: justify;
 	width : 70%;
 	height : 76%;
