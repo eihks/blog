@@ -30,6 +30,21 @@ $dataC = $comment->fetch();
 	</h2>
 	<p><a href="index.php?action=postpage&id_post=<?= $dataC['id_post']; ?>"><?= $dataC["content"]; ?></a></p>
 </div>
+<script type="text/javascript">
+	document.querySelector("#confirm-comment-btn").addEventListener("click", function(e){
+		if(confirm("Souhaitez-vous vraiment valider le commentaire ? Après confirmation ce commentaire n'apparaitra plus comme signaler. \n Continuer ?") == false)
+		{
+			e.preventDefault();
+		}
+	})
+
+	document.querySelector("#delete-comment-btn").addEventListener("click", function(e){
+		if(confirm("Attention cette action est définitive, voulez-vous vraiment supprimer ce commentaire ?") == false)
+		{
+			e.preventDefault();
+		}
+	})
+</script>
 <?php
 $content = ob_get_clean();
 require("view/backend/template.php");
