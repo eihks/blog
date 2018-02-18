@@ -21,7 +21,11 @@ ob_start();
 while($datas = $comms->fetch())
 {
 ?>
-	<p><?php echo htmlspecialchars($datas["creation_date_fr"]) ?><a class="report-comment" title="Signaler le commentaire" href="index.php?action=reportcomment&id_post=<?= $_GET['id_post']; ?>&id=<?= $datas['id']; ?>" ><i class="fa fa-exclamation" aria-hidden="true"></i></a></p>
+	<p><?php echo htmlspecialchars($datas["creation_date_fr"]) ?>
+		<a class="report-comment" title="Signaler le commentaire" href="index.php?action=reportcomment&title=<?= $_GET['title']; ?>&id_post=<?= $_GET['id_post']; ?>&id=<?= $datas['id']; ?>" >
+			<i class="fa fa-exclamation" aria-hidden="true"></i>
+		</a>
+	</p>
 	<p class="text-comment"><?= htmlspecialchars($datas["content"]); ?></p>
 <?php
 }
