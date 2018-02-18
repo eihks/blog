@@ -30,8 +30,10 @@ if($_GET["page"] > 1)
 ?>
 	<div class="ticket">
 		<a class="a-ticket" href="index.php?action=postpage&title=<?= $data['title'] ?>&id_post=<?= $data['id']; ?> ">
-			<h2><?= htmlspecialchars($data["title"]); ?></h2>
-			<span class="text"><p><?= substr(htmlspecialchars($data["content"]), 0, 500) . "..."; ?></p></span>
+			<h2><?= $data["title"]; ?></h2>
+			<span class="text">
+				<p><?= substr($data["content"], 0, 500) . "..."; ?></p>
+			</span>
 			<div id="test"><div class="author"><p><?= $data["author"]; ?></p></div><div class ="date"><p><?= $data["creation_date_fr"]; ?></p></div></div>
 		</a>
 	</div>
