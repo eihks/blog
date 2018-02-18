@@ -5,8 +5,8 @@ $dataP = $post->fetch();
 $dataC = $comment->fetch();
 ?>
 
-<h1 id="h1-homepage">Bienvenue sur la page d'administration</h1>
 <a href="index.php?action=administration&want=newPost"><button type="button" id="btn-new-post">Nouveau Ticket</button></a>
+<h1 id="h1-homepage">Bienvenue sur la page d'administration</h1>
 <div id="last-post">
 	<div class="ticket">
 		<h2>Dernier ticket
