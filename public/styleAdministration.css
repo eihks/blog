@@ -86,11 +86,12 @@ h1, h2, h3, h4, h5, h6, label{
 }
 
 .edit-ico{
-	color : inherit;
+	color : #666666;
 }
 
 .confirm-ico{
 	color : green;
+	font-size : ;
 }
 
 /* ============================== HOMEPAGE =============================== */
@@ -121,10 +122,6 @@ h1, h2, h3, h4, h5, h6, label{
 	text-align: justify;
 }
 
-.ticket > h2
-{
-	font-size : 2em;
-}
 
 .a-ticket{
 	display: block;
