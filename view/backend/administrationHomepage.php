@@ -17,7 +17,7 @@ $dataC = $comment->fetch();
 		</h2>
 		<a class="a-ticket" href="index.php?action=postpage&title=<?= $dataP['title'] ?>&id_post=<?= $dataP['id']; ?> ">
 			<span class="title"><h2><?= $dataP["title"]; ?></h2></span>
-			<span class="text"><p><?= $dataP["content"]; ?></p></span>
+			<span class="text"><p><?= substr($dataP["content"], 0,500) . "..."; ?></p></span>
 			<span class="author"><p><?= $dataP["author"]; ?></p></span>
 			<span class ="date"><p><?= $dataP["creation_date_fr"]; ?></p></span>
 		</a>
