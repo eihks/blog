@@ -6,6 +6,10 @@ class ControllerAdmin{
 	{
 		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
 		{
+			$postManager = new PostManager();
+			$post = $postManager->getLastPost();
+			$commentManager = new CommentManager();
+			$comment = $commentManager->getLastComment();
 			require("view/backend/administrationHomepage.php");
 		}
 		else
@@ -15,6 +19,10 @@ class ControllerAdmin{
 			if(isset($_POST["password"]) AND password_verify($_POST["password"], $passwordHash))
 			{
 				$_SESSION["isLog"] = true;
+				$postManager = new PostManger();
+				$post = $postManager->getLastPost();
+				$commentManager = new CommentManager();
+				$comment = $commentManager->getLastComment();
 				require("view/backend/administrationHomepage.php");
 			}
 			else
