@@ -48,9 +48,9 @@ if(isset($_SESSION["alreadyReported"]))
 		</p>
 		<input type="submit" value="Envoyer">
 	</form>
+	<a href="index.php?action=homepage" class="btn-back-homepage">Retour à la page d'accueil</a>
 </div>
 
-<a href="index.php?action=homepage">Retour à la page d'accueil</a>
 <?php
 $content = ob_get_clean();
 require("view/frontend/template.php");
