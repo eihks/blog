@@ -77,4 +77,11 @@ class CommentManager extends Manager{
 		));
 		return $comment;
 	}
+
+	public function getLastComment()
+	{
+		$db = $this->db();
+		$comment = $db->query("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments ORDER BY id DESC LIMIT 1");
+		return $comment;
+	}
 }
