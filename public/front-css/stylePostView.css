@@ -1,0 +1,72 @@
+body{
+	margin : 0;
+	background-color: #f3f3f3;
+	font-family: sans-serif;
+	color : #666666;
+}
+
+h1, h2, h3, h4, h5, h6, label{
+	color : #6666ff;
+	font-family: serif;
+}
+
+label{
+	font-size : 1.3em;
+	font-weight : bold;
+}
+
+.ticket{
+	width : 90%;
+	background-color: white;
+	margin : 0 auto;
+	text-align : center;
+	padding-bottom : 20px;
+}
+
+.text p{
+	width : 90%;
+	margin : 0 auto;
+	text-align: justify;
+}
+
+#contenaire-comments{
+	width : 90%;
+	height : 80%;
+	margin : 0 auto;
+	background-color : white;
+	text-align : center;
+	color : black;
+	padding-bottom: 20px;
+}
+
+.report-comment{
+	margin-left : 10px;
+	color : red;
+}
+
+.text-comment{
+	color : #666666;
+}
+
+#form-post-comment{
+	text-align: center;
+}
+
+#txt-area-comment{
+	width : 300px;
+	height : 100px;
+}
+
+.btn-back-homepage{
+	display : block;
+	text-decoration : none;
+	color : #666666;
+	margin-top : 50px;
+}
+
+@media screen and (max-width: 640px) {
+	#txt-area-comment{
+		width : 90%;
+		height : 100px;
+	}
+}
