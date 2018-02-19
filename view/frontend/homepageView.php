@@ -1,6 +1,6 @@
 <?php 
 $title="Jean Forteroche";
-$cssFile = "style.css";
+$cssFile = "styleHomepage.css";
 ob_start();
 ?>
 
