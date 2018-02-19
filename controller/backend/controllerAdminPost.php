@@ -27,8 +27,6 @@ class ControllerAdminPost{
 			}
 			else
 			{
-				echo "pas ok";
-				echo $passwordHash;
 				require("view/backend/loginView.php");
 			}
 		}
