@@ -2,7 +2,8 @@
 session_start();
 require_once("controller/frontend/controllerHomepage.php");
 require_once("controller/frontend/controllerPosts.php");
-require_once("controller/backend/controllerAdmin.php");
+require_once("controller/backend/controllerAdminPost.php");
+require_once("controller/backend/controllerAdminComment.php");
 try{
 	if(isset($_GET["action"]))
 	{
@@ -52,54 +53,54 @@ try{
 			{
 				if($_GET["want"] === "seePosts") /* call page where we can see all posts */
 				{
-					ControllerAdmin::seePosts();
+					ControllerAdminPost::seePosts();
 				}
 				elseif($_GET["want"] === "editPost" AND $_GET["id_post"] > 0) /* edit post */
 				{
 					if(isset($_POST["title"]) AND isset($_POST["content"])) /* check if we got $_POST variable for update the post */
 					{
-						ControllerAdmin::updatePost();
+						ControllerAdminPost::updatePost();
 					}
 					else
 					{
-						ControllerAdmin::editPost();
+						ControllerAdminPost::editPost();
 					}
 				}
 				elseif($_GET["want"] === "newPost") /* create a new post */
 				{
 					if(isset($_POST["title"]) AND isset($_POST["content"])) /* check if we got $_POST variable for insert the post in db */
 					{
-						ControllerAdmin::insertPost();
+						ControllerAdminPost::insertPost();
 					}
 					else
 					{
-						ControllerAdmin::newPost();
+						ControllerAdminPost::newPost();
 					}
 				}
 				elseif($_GET["want"] === "deletePost" AND $_GET["id_post"] > 0) /* call for delete post */
 				{
-					ControllerAdmin::deletePost();
+					ControllerAdminPost::deletePost();
 				}
 				elseif($_GET["want"] === "seeComments") /* call page for see all reported comments */
 				{
-					ControllerAdmin::seeComments();
+					ControllerAdminComment::seeComments();
 				}
 				elseif($_GET["want"] === "deleteComment" AND $_GET["comment_id"] > 0) /* call for delete comment */
 				{
-					ControllerAdmin::deleteComment();
+					controllerAdminComment::deleteComment();
 				}
 				elseif($_GET["want"] === "editComment" AND $_GET["comment_id"] > 0) /* call for edit comment */
 				{
-					ControllerAdmin::editComment();
+					ControllerAdminComment::editComment();
 				}
 				elseif($_GET["want"] === "confirmComment" AND $_GET["comment_id"] > 0) /* call for confirm comment (set the report_level to 0)*/
 				{
-					ControllerAdmin::confirmComment();
+					ControllerAdminComment::confirmComment();
 				}
 			}
 			else
 			{
-				ControllerAdmin::login();
+				ControllerAdminPost::login();
 			}
 		}
 	}
