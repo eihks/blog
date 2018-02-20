@@ -136,7 +136,7 @@ body{
 	font-weight : bold;
 }
 
-#headband-main-nav{
+.headband{
 	background-color : #090d11;
 	color : #334c66;
 	text-align: center;
@@ -144,7 +144,7 @@ body{
 	font-weight: none;
 }
 
-#headband-main-nav:hover{
+.headband:hover{
 	background-color : #090d11;
 	font-weight: initial;
 }
