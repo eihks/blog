@@ -1,5 +1,6 @@
 <?php 
 $title="Administration";
+$cssFile ="styleHomepage.css";
 ob_start();
 $dataP = $post->fetch();
 $dataC = $comment->fetch();
