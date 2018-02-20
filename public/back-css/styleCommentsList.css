@@ -1,0 +1,18 @@
+#comments-contenair li{
+	list-style-type : none;
+	margin-bottom : 15px;
+}
+
+#comments-contenair a{
+	text-decoration : none;
+	color : #666666;
+	font-size : 0.9em;
+}
+
+#comments-contenair a:hover{
+	font-weight : bold;
+}
+
+.p-Nreport{
+	margin : 0;
+}
