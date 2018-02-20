@@ -2,9 +2,6 @@ body{
 	background-color: rgb(28,41,55);
 }
 
-h1, h2, h3, h4, h5, h6, label{
-}
-
 #main-content-div{
 	width: 80%;
 	min-height : 100vh;
@@ -37,19 +34,13 @@ h1, h2, h3, h4, h5, h6, label{
 	cursor : pointer;
 	list-style-type: none;
 	margin-bottom : 25px;
-	color : #6666ff;
 }
 
 #menu-bar a{
 	text-decoration : none;
 	font-size : 1.1em;
+	color : white;
 }
-
-#menu-bar a:hover{
-	font-weight : bold;
-	font-size : 1.1em;
-}
-
 
 #tickets-list{
 	display : none;
@@ -123,4 +114,37 @@ h1, h2, h3, h4, h5, h6, label{
 	color: white;
 	line-height : 50px;
 	font-family: Montserrat;
+}
+
+.icon-menu-bar{
+	margin-right : 10px;
+}
+
+.contenair-menu-el{
+	width : 100%;
+	padding-top : 20px;
+	padding-bottom : 20px;
+	margin-top : 20px;
+}
+
+.contenair-menu-el a{
+	margin-left : 10px	;
+}
+
+.contenair-menu-el:hover{
+	background-color: black;
+	font-weight : bold;
+}
+
+#headband-main-nav{
+	background-color : #090d11;
+	color : #334c66;
+	text-align: center;
+	margin-top : 0px;
+	font-weight: none;
+}
+
+#headband-main-nav:hover{
+	background-color : #090d11;
+	font-weight: initial;
 }
