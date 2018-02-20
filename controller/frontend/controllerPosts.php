@@ -8,6 +8,7 @@ class ControllerPosts{
 		$post = $postManager->getPost();
 		$commentManager = new CommentManager();
 		$comms = $commentManager->getComms();
+		$visit = $postManager->addOneVisit($_GET["id_post"]);
 		require("view/frontend/postView.php");
 	}
 	public static function newComment()
