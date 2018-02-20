@@ -29,11 +29,37 @@
 				</div>
 
 				<div id="menu-bar">
-					<ul>
-						<a href="index.php"><li>Retourner sur la page d'accueil du blog</li></a>
-						<a href="index.php?action=administration&want=seePosts"><li id="tickets-button">Mes tickets</li></a>
-						<a href="index.php?action=administration&want=seeComments"><li id="comments-button">Gérer les commentaires</li></a>
-					</ul>
+					<div class="contenair-menu-el headband">
+						<p>Navigation principale</p>
+					</div>
+					<div class="contenair-menu-el">
+						<a href="index.php?action=administration" class="a-menu-bar">
+							<i class="fas fa-chart-bar icon-menu-bar"></i>Tableau de bord
+						</a>
+					</div>
+					<div class="contenair-menu-el">
+						<a href="index.php" class="a-menu-bar">
+							<i class="far fa-circle icon-menu-bar"></i>Retourner sur la page d'accueil du blog
+						</a>
+					</div>
+					<div class="contenair-menu-el">
+						<a href="index.php?action=administration&want=seePosts" class="a-menu-bar">
+							<i class="fas fa-clipboard icon-menu-bar"></i>Mes tickets
+						</a>
+					</div>
+					<div class="contenair-menu-el">
+						<a href="index.php?action=administration&want=seeComments" class="a-menu-bar">
+							<i class="far fa-comment icon-menu-bar"></i>Commentaires
+						</a>
+					</div>
+					<div class="contenair-menu-el headband">
+						<p>Gestion de votre compte</p>
+					</div>
+					<div class="contenair-menu-el">
+						<a href="index.php?action=administration&want=logout">
+							<i class="fas fa-sign-out-alt icon-menu-bar"></i>Déconnexion
+						</a>
+					</div>
 				</div>
 			</div>
 		</body>
