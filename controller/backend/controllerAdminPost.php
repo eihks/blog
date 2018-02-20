@@ -9,7 +9,7 @@ class ControllerAdminPost{
 			$postManager = new PostManager();
 			$post = $postManager->getLastPost();
 			$commentManager = new CommentManager();
-			$comment = $commentManager->getLastComment();
+			$comments = $commentManager->get5LastsComment();
 			require("view/backend/administrationHomepage.php");
 		}
 		else
@@ -19,7 +19,7 @@ class ControllerAdminPost{
 			if(isset($_POST["password"]) AND password_verify($_POST["password"], $passwordHash))
 			{
 				$_SESSION["isLog"] = true;
-				$postManager = new PostManger();
+				$postManager = new PostManager();
 				$post = $postManager->getLastPost();
 				$commentManager = new CommentManager();
 				$comment = $commentManager->getLastComment();
