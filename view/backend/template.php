@@ -2,7 +2,9 @@
 	<html lang="fr">
 		<head>
 			<meta charset="utf-8" />
-			<link rel="stylesheet" href="public/styleAdministration.css" />
+			<link rel="stylesheet" href="public/back-css/<?= $cssFile; ?>" />
+			<link rel="stylesheet" href="public/back-css/styleTemplate.css" />
+			<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 			<link rel="stylesheet" href="public/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all">
 			<script type="text/javascript" src="public/tinymce/js/tinymce/tinymce.min.js"></script>
 			<script type="text/javascript">
@@ -18,6 +20,10 @@
 
 		<body>
 			<div id="page">
+				<div id="top">
+					<h1>Jean Forteroche</h1>
+					<h2>Administration</h2>
+				</div>
 				<div id="main-content-div">
 					<?= $content; ?>
 				</div>
