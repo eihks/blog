@@ -3,7 +3,6 @@ $title="Administration";
 $cssFile ="styleHomepage.css";
 ob_start();
 $dataP = $post->fetch();
-$dataC = $comment->fetch();
 ?>
 
 <a href="index.php?action=administration&want=newPost"><button type="button" id="btn-new-post">Nouveau Ticket</button></a>
@@ -25,17 +24,37 @@ $dataC = $comment->fetch();
 	</div>
 </div>
 
-<div id="last-comment">
-	<h2>
-		Dernier Commentaire
-		<span>
-			<a href="index.php?action=administration&want=deleteComment&comment_id=<?= $dataC['id']; ?>" title="Supprimer le commentaire" id="delete-comment-btn"><i class="fas fa-trash-alt delete-ico fa-xs"></i></a>
-			<a href="index.php?action=administration&want=editComment&comment_id=<?= $dataC['id']; ?>" title="Editer le commentaire" id="edit-comment-btn"><i class="fas fa-edit edit-ico fa-xs"></i></a>
-			<a href="index.php?action=administration&want=confirmComment&comment_id=<?= $dataC['id']; ?>" title="Valider le commentaire" id="confirm-comment-btn"><i class="fas fa-check-circle confirm-ico fa-xs"></i></a>
-		</span>
-	</h2>
+<table id="last-comment-table">
+	<h2>Derniers Commentaire</h2>
+		<?php
+			$i = 0;
+			while($dataC = $comments->fetch())
+			{
+				if($i%2 == 0)
+				{
+					$color = "#eef5fc";
+				}
+				else
+				{
+					$color = "white";
+				}
+				$i++;
+		?>
+				<tr style="background-color : <?= $color; ?>">
+					<th class="th-table-lastC"><?= $dataC["creation_date_fr"]; ?></th>
+					<th class="th-table-lastC"><a href="index.php?action=postpage&id_post=<?= $dataC['id_post']; ?>"><?= $dataC["content"]; ?></a></th>
+					<th class="th-table-lastC">
+						<span>
+							<a href="index.php?action=administration&want=deleteComment&comment_id=<?= $dataC['id']; ?>" title="Supprimer le commentaire" id="delete-comment-btn"><i class="fas fa-trash-alt delete-ico fa-xs"></i></a>
+							<a href="index.php?action=administration&want=editComment&comment_id=<?= $dataC['id']; ?>" title="Editer le commentaire" id="edit-comment-btn"><i class="fas fa-edit edit-ico fa-xs"></i></a>
+							<a href="index.php?action=administration&want=confirmComment&comment_id=<?= $dataC['id']; ?>" title="Valider le commentaire" id="confirm-comment-btn"><i class="fas fa-check-circle confirm-ico fa-xs"></i></a>
+						</span>
+					</th>
+		<?php
+			}
+		?>
 	<p><a href="index.php?action=postpage&id_post=<?= $dataC['id_post']; ?>"><?= $dataC["content"]; ?></a></p>
-</div>
+</table>
 <script type="text/javascript">
 	document.querySelector("#confirm-comment-btn").addEventListener("click", function(e){
 		if(confirm("Souhaitez-vous vraiment valider le commentaire ? Après confirmation ce commentaire n'apparaitra plus comme signaler. \n Continuer ?") == false)
