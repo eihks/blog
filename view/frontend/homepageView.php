@@ -42,10 +42,19 @@ if($_GET["page"] > 1)
 ?>
 </div>
 <div id="contenaire-link-page">
-	<?php
-	for($i =1; $i <= $totalPage; $i++)
+	<?php 
+		if($currentPage > 1)
+		{
+			echo "<a href='index.php?action=homepage&page=$currentPage -1;'> < </a>";
+		}
+	$totalPage = 30;
+	for($i = $currentPage; $i <= $totalPage; $i++)
 	{
-		if($i == $currentPage)
+		if($i > $currentPage +5)
+		{
+			break;
+		}
+		elseif($i == $currentPage)
 		{
 			echo "".$i;
 		}
