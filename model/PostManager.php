@@ -18,6 +18,15 @@ class PostManager extends Manager{
 		return $post;
 	}
 
+	public function addOneVisit($id)
+	{
+		$db = $this->db();
+		$post = $db->prepare("UPDATE tickets SET total_visit = total_visit+1 WHERE id = :id");
+		$post->execute(array(
+			"id" => $id
+		));
+	}
+
 	public function getTotalRow()
 	{
 		$db = $this->db();
