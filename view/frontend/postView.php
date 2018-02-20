@@ -1,6 +1,5 @@
-<?php $title = $_GET["title"]; ?>
-<?php $cssFile = "stylePostView.css"; ?>
-<?php
+<?php $title = $_GET["title"];
+$cssFile = "stylePostView.css";
 ob_start();
  ?>
 <div id="contenaire_ticket">
@@ -48,7 +47,7 @@ if(isset($_SESSION["alreadyReported"]))
 		</p>
 		<input type="submit" value="Envoyer">
 	</form>
-	<a href="index.php?action=homepage" class="btn-back-homepage">Retour à la page d'accueil</a>
+	<a href="index.php?action=homepage" class="btn-back-homepage">Retour à la page d'accueil</a>	
 </div>
 
 <?php
