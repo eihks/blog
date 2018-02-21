@@ -22,7 +22,7 @@ class ControllerAdminPost{
 				$postManager = new PostManager();
 				$post = $postManager->getLastPost();
 				$commentManager = new CommentManager();
-				$comment = $commentManager->getLastComment();
+				$comments = $commentManager->get5LastsComment();
 				require("view/backend/administrationHomepage.php");
 			}
 			else
