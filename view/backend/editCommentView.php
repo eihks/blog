@@ -1,5 +1,6 @@
 <?php
 $title ="Administration";
+$cssFile = "styleEditComment.css";
 ob_start();
 $data = $comment->fetch();
 ?>
