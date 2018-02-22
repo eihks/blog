@@ -1,0 +1,20 @@
+.label-title-input{
+	display: block;
+	text-align: center;
+	font-size : 1.5em;
+	font-weight : bold;
+	width: 100%;
+	margin-top : 20px;
+}
+
+#input-title{
+	width : 98%;
+	text-align: center;
+	font-weight : bold;
+	font-size : 1.1em;
+	margin-top: 10px;
+}
+
+.mceEditor{
+	height : 62vh;
+}
