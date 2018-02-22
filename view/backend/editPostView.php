@@ -1,5 +1,6 @@
 <?php
 $title ="Administration";
+$cssFile = "styleEditPost.css";
 ob_start();
 if(isset($_GET["id_post"]))
 {
