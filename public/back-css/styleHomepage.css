@@ -3,9 +3,9 @@
 }
 
 #last-post{
-	border-top : 3px solid #6666ff;
-	border-bottom : 3px solid #6666ff;
-	margin-top : 200px;
+	border-top : 3px solid rgb(28,41,55);
+	border-bottom : 3px solid rgb(28,41,55);
+	margin-top : 100px;
 	width: 100%;
 	background-color: white;
 }
@@ -20,7 +20,7 @@
 }
 
 .text p{
-	width : 30%;
+	width : 100%;
 	margin : auto;
 	text-align: justify;
 }
@@ -37,7 +37,8 @@
 
 #last-comment-table{
 	border-collapse: collapse;
-	width : 100%;
+	width: 75%;
+	margin: auto;
 }
 
 .th-table-lastC{
