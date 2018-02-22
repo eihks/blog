@@ -20,6 +20,7 @@ $dataP = $post->fetch();
 			<span class="text"><p><?= substr($dataP["content"], 0,500) . "..."; ?></p></span>
 			<span class="author"><p><?= $dataP["author"]; ?></p></span>
 			<span class ="date"><p><?= $dataP["creation_date_fr"]; ?></p></span>
+			<span class="total-visit" title="Vue(s)"><p><i class="fas fa-eye total-visit-ico"></i><?= $dataP["total_visit"]; ?></p></span>
 		</a>
 	</div>
 </div>
