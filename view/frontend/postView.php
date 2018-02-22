@@ -39,9 +39,9 @@ if(isset($_SESSION["alreadyReported"]))
 <?php
 	$_SESSION["alreadyReported"] = false;
 	}
-}
+}	
 ?>
-	<form id="form-post-comment" method="POST" action="index.php?action=newcomment&id_post=<?= $_GET['id_post']; ?> ">		
+	<form id="form-post-comment" method="POST" action="index.php?action=newcomment&id_post=<?= $_GET['id_post']; ?>&post_name=<?= $data['title']; ?>">		
 		<p>
 			<label>Poster un commentaire :<br><textarea name="content" id="txt-area-comment"></textarea></label>
 		</p>
