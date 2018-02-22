@@ -83,7 +83,11 @@ try{
 				}
 				elseif($_GET["want"] === "seeComments") /* call page for see all reported comments */
 				{
-					ControllerAdminComment::seeComments();
+					ControllerAdminComment::seeAllComments();
+				}
+				elseif($_GET["want"] === "seeReportedComments")
+				{
+					ControllerAdminComment::seeReportedComments();
 				}
 				elseif($_GET["want"] === "deleteComment" AND $_GET["comment_id"] > 0) /* call for delete comment */
 				{
