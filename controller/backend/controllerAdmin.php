@@ -1,5 +1,4 @@
 <?php
-ini_set("display_errors",0);error_reporting(0);
 require_once("model/CommentManager.php");
 require_once("model/PostManager.php");
 class ControllerAdmin{
