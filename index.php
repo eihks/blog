@@ -105,6 +105,10 @@ try{
 						ControllerAdminComment::confirmComment();
 					}
 				}
+				else
+				{
+					ControllerAdmin::login();
+				}
 			}
 			else
 			{
