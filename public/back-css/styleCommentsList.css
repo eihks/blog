@@ -1,3 +1,18 @@
+#posts-list li, #comments-contenair li{
+	list-style-type: none;
+	margin-bottom : 10px;
+	padding : 10px;
+	border : 1px solid black;
+	display : flex;
+	justify-content: space-between;
+}
+
+#posts-list a{
+	text-decoration : none;
+	margin-right : 5px;
+}
+
+
 #comments-contenair li{
 	list-style-type : none;
 	margin-bottom : 15px;
@@ -5,7 +20,7 @@
 
 #comments-contenair a{
 	text-decoration : none;
-	color : #666666;
+	color : black;
 	font-size : 0.9em;
 }
 
