@@ -8,12 +8,12 @@ class PostManager extends Manager{
 		$posts = $db->query("SELECT id, author, title, content, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM tickets ORDER BY id DESC LIMIT " .$start . ", " . $postPerPage);
 		return $posts;
 	}
-	public function getPost()
+	public function getPost($id)
 	{
 		$db = $this->db();
 		$post = $db->prepare("SELECT id, author, title, content, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM tickets WHERE id = :id");
 		$post->execute(array(
-			"id" => $_GET["id_post"]
+			"id" => $id
 		));
 		return $post;
 	}
@@ -65,12 +65,12 @@ class PostManager extends Manager{
 		return $post;
 	}
 
-	public function deletePost()
+	public function deletePost($id)
 	{
 		$db = $this->db();
 		$post = $db->prepare("DELETE FROM tickets WHERE id = :id");
 		$post->execute(array(
-			"id" => $_GET["id_post"]
+			"id" => $id
 		));
 	}
 
