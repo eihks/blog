@@ -1,90 +1,52 @@
 <?php
 require_once("model/CommentManager.php");
 require_once("model/PostManager.php");
-class ControllerAdminComment{
-	public static function seeAllComments()
-	{
-		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+
+if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+{
+	class ControllerAdminComment{
+		public static function seeAllComments()
 		{
 			$commentManager = new CommentManager();
 			$comments = $commentManager->getAllComments();
-			require("view/backend/seeCommentsView.php");
+			require("view/backend/seeCommentsView.php");	
 		}
-		else
-		{
-			throw new Exception("Vous n'étes pas connecter ! ");
-		}	
-	}
 
-	public static function seeReportedComments()
-	{
-		$commentManager = new CommentManager();
-		$comments = $commentManager->getReportedComments();
-		require("view/backend/seeReportedCommentsView.php");
-	}
-
-	public static function controlComment()
-	{
-		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		public static function seeReportedComments()
 		{
 			$commentManager = new CommentManager();
-			$comment = $commentManager->getComment();
-			require("view/backend/seeCommentView.php");
+			$comments = $commentManager->getReportedComments();
+			require("view/backend/seeReportedCommentsView.php");
 		}
-		else
-		{
-			throw new Exception("Vous n'étes pas connecter ! ");
-		}	
-	}
 
-	public static function deleteComment()
-	{
-		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		public static function deleteComment()
 		{
 			$commentManager = new CommentManager();
-			$comment = $commentManager->deleteComment();
-			header("Location: index.php?action=administration&want=seeComments");
+			$comment = $commentManager->deleteComment($_GET["comment_id"]);
+			header("Location: index.php?action=administration&want=seeComments");		
 		}
-		else
-		{
-			throw new Exception("Vous n'étes pas connecter ! ");
-		}		
-	}
 
-	public static function editComment()
-	{
-		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		public static function editComment()
 		{
 			if(isset($_POST["content"]))
 			{
 				$commentManager = new CommentManager();
-				$comment = $commentManager->editComment();
+				$comment = $commentManager->editComment($_POST["content"],$_GET["comment_id"] );
 				header("Location: index.php?action=administration&want=seeComments");
 			}
 			else
 			{
 				$commentManager = new CommentManager();
-				$comment = $commentManager->getComment();
+				$comment = $commentManager->getComment($_GET["comment_id"]);
 				require("view/backend/editCommentView.php");
 			}
 		}
-		else
-		{
-			throw new Exception("Vous n'étes pas connecter ! ");
-		}	
-	}
 
-	public static function confirmComment()
-	{
-		if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
+		public static function confirmComment()
 		{
 			$commentManager = new CommentManager();
-			$comment = $commentManager->confirmComment();
+			$comment = $commentManager->confirmComment($_GET["comment_id"]);
 			header("Location: index.php?action=administration&want=seeComments");
-		}
-		else
-		{
-			throw new Exception("Vous n'étes pas connecter ! ");
 		}
 	}
 }
