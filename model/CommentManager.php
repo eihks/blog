@@ -10,13 +10,14 @@ class CommentManager extends Manager{
 		));
 		return $comms;
 	}
-	public function insertComment()
+	public function insertComment($id_post, $content, $post_name)
 	{
 		$db = $this->db();
-		$post = $db->prepare("INSERT INTO comments(id_post, content, creation_date) VALUES(:id_post, :content, NOW())");
+		$post = $db->prepare("INSERT INTO comments(id_post, content, post_name ,creation_date) VALUES(:id_post, :content, :post_name, NOW())");
 		$post->execute(array(
-			"id_post" => $_GET["id_post"],
-			"content" => $_POST["content"]
+			"id_post" => $id_post,
+			"content" => $content,
+			"post_name" => $post_name
 		));
 		return $post;
 	}
