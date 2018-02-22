@@ -1,15 +1,16 @@
 <?php
 require_once("model/Manager.php");
 class CommentManager extends Manager{
-	public function getComms()
+	public function getComms($id_post)
 	{
 		$db = $this->db();
 		$comms = $db->prepare("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments WHERE id_post = :id_post ORDER BY id DESC");
 		$comms->execute(array(
-			"id_post" => $_GET["id_post"]
+			"id_post" => $id_post
 		));
 		return $comms;
 	}
+
 	public function insertComment($id_post, $content, $post_name)
 	{
 		$db = $this->db();
@@ -21,12 +22,13 @@ class CommentManager extends Manager{
 		));
 		return $post;
 	}
-	public function reportComment()
+
+	public function reportComment($id)
 	{
 		$db = $this->db();
 		$comment = $db->prepare("UPDATE comments SET report_level=report_level+1 WHERE id = :id");
 		$comment->execute(array(
-			"id" => $_GET["id"]
+			"id" => $id
 		));
 		return $comment;
 	}
@@ -38,43 +40,43 @@ class CommentManager extends Manager{
 		return $comments;
 	}
 
-	public function getComment()
+	public function getComment($id)
 	{
 		$db = $this->db();
 		$comment = $db->prepare("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments WHERE id = :id");
 		$comment->execute(array(
-			"id" => $_GET["comment_id"]
+			"id" => $id
 		));
 		return $comment;
 	}
 
-	public function deleteComment()
+	public function deleteComment($id)
 	{
 		$db = $this->db();
 		$comment = $db->prepare("DELETE FROM comments WHERE id = :id");
 		$comment->execute(array(
-			"id" => $_GET["comment_id"]
+			"id" => $id
 		));
 		return $comment;
 	}
 
-	public function editComment()
+	public function editComment($content, $id)
 	{
 		$db = $this->db();
 		$comment = $db->prepare("UPDATE comments SET content = :content, report_level = 0 WHERE id = :id");
 		$comment->execute(array(
-			"content" => $_POST["content"],
-			"id" => $_GET["comment_id"]
+			"content" => $content,
+			"id" => $id
 		));
 		return $comment;
 	}
 
-	public function confirmComment()
+	public function confirmComment($id)
 	{
 		$db = $this->db();
 		$comment = $db->prepare("UPDATE comments SET report_level = 0 WHERE id = :id");
 		$comment->execute(array(
-			"id" => $_GET["comment_id"]
+			"id" => $id
 		));
 		return $comment;
 	}
