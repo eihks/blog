@@ -14,8 +14,8 @@ class ControllerPosts{
 	public static function newComment()
 	{
 		$CommentManager = new CommentManager();
-		$post = $CommentManager->insertComment();
-		header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]);
+		$post = $CommentManager->insertComment($_GET["id_post"], $_POST["content"], $_GET["post_name"]);
+		header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]. "&title=".$_GET["title"]);
 	}
 	public static function reportComment()
 	{
