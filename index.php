@@ -4,6 +4,7 @@ require_once("controller/frontend/controllerHomepage.php");
 require_once("controller/frontend/controllerPosts.php");
 require_once("controller/backend/controllerAdminPost.php");
 require_once("controller/backend/controllerAdminComment.php");
+require_once("controller/backend/controllerAdmin.php");
 try{
 	if(isset($_GET["action"]))
 	{
@@ -49,62 +50,65 @@ try{
 
 		elseif($_GET["action"] === "administration") /* access the administration */
 		{
-			if(isset($_GET["want"]))
+			if(isset($_SESSION["isLog"]) AND $_SESSION["isLog"] == true)
 			{
-				if($_GET["want"] === "seePosts") /* call page where we can see all posts */
+				if(isset($_GET["want"]))
 				{
-					ControllerAdminPost::seePosts();
-				}
-				elseif($_GET["want"] === "editPost" AND $_GET["id_post"] > 0) /* edit post */
-				{
-					if(isset($_POST["title"]) AND isset($_POST["content"])) /* check if we got $_POST variable for update the post */
+					if($_GET["want"] === "seePosts") /* call page where we can see all posts */
 					{
-						ControllerAdminPost::updatePost();
+						ControllerAdminPost::seePosts();
 					}
-					else
+					elseif($_GET["want"] === "editPost" AND $_GET["id_post"] > 0) /* edit post */
 					{
-						ControllerAdminPost::editPost();
+						if(isset($_POST["title"]) AND isset($_POST["content"])) /* check if we got $_POST variable for update the post */
+						{
+							ControllerAdminPost::updatePost();
+						}
+						else
+						{
+							ControllerAdminPost::editPost();
+						}
 					}
-				}
-				elseif($_GET["want"] === "newPost") /* create a new post */
-				{
-					if(isset($_POST["title"]) AND isset($_POST["content"])) /* check if we got $_POST variable for insert the post in db */
+					elseif($_GET["want"] === "newPost") /* create a new post */
 					{
-						ControllerAdminPost::insertPost();
+						if(isset($_POST["title"]) AND isset($_POST["content"])) /* check if we got $_POST variable for insert the post in db */
+						{
+							ControllerAdminPost::insertPost();
+						}
+						else
+						{
+							ControllerAdminPost::newPost();
+						}
 					}
-					else
+					elseif($_GET["want"] === "deletePost" AND $_GET["id_post"] > 0) /* call for delete post */
 					{
-						ControllerAdminPost::newPost();
+						ControllerAdminPost::deletePost();
 					}
-				}
-				elseif($_GET["want"] === "deletePost" AND $_GET["id_post"] > 0) /* call for delete post */
-				{
-					ControllerAdminPost::deletePost();
-				}
-				elseif($_GET["want"] === "seeComments") /* call page for see all reported comments */
-				{
-					ControllerAdminComment::seeAllComments();
-				}
-				elseif($_GET["want"] === "seeReportedComments")
-				{
-					ControllerAdminComment::seeReportedComments();
-				}
-				elseif($_GET["want"] === "deleteComment" AND $_GET["comment_id"] > 0) /* call for delete comment */
-				{
-					controllerAdminComment::deleteComment();
-				}
-				elseif($_GET["want"] === "editComment" AND $_GET["comment_id"] > 0) /* call for edit comment */
-				{
-					ControllerAdminComment::editComment();
-				}
-				elseif($_GET["want"] === "confirmComment" AND $_GET["comment_id"] > 0) /* call for confirm comment (set the report_level to 0)*/
-				{
-					ControllerAdminComment::confirmComment();
+					elseif($_GET["want"] === "seeComments") /* call page for see all reported comments */
+					{
+						ControllerAdminComment::seeAllComments();
+					}
+					elseif($_GET["want"] === "seeReportedComments")
+					{
+						ControllerAdminComment::seeReportedComments();
+					}
+					elseif($_GET["want"] === "deleteComment" AND $_GET["comment_id"] > 0) /* call for delete comment */
+					{
+						controllerAdminComment::deleteComment();
+					}
+					elseif($_GET["want"] === "editComment" AND $_GET["comment_id"] > 0) /* call for edit comment */
+					{
+						ControllerAdminComment::editComment();
+					}
+					elseif($_GET["want"] === "confirmComment" AND $_GET["comment_id"] > 0) /* call for confirm comment (set the report_level to 0)*/
+					{
+						ControllerAdminComment::confirmComment();
+					}
 				}
 			}
 			else
 			{
-				ControllerAdminPost::login();
+				ControllerAdmin::login();
 			}
 		}
 	}
