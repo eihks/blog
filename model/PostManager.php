@@ -8,6 +8,7 @@ class PostManager extends Manager{
 		$posts = $db->query("SELECT id, author, title, content, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM tickets ORDER BY id DESC LIMIT " .$start . ", " . $postPerPage);
 		return $posts;
 	}
+	
 	public function getPost($id)
 	{
 		$db = $this->db();
