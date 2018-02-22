@@ -1,5 +1,6 @@
 <?php
 $title = "Administration";
+$cssFile = "stylePostsList.css";
 ob_start();
 ?>
 <div id="posts-list">
