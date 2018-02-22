@@ -21,7 +21,10 @@ ob_start();
 			}
 		?>
 		<li style="background-color : <?= $color; ?>">
-			<a href="index.php?action=administration&want=editPost&id_post=<?= $datas['id']; ?>" title="Editer le ticket"><?= $datas["title"]; ?></a>
+			<span>
+				<a href="index.php?action=administration&want=editPost&id_post=<?= $datas['id']; ?>" title="Editer le ticket"><?= $datas["title"]; ?></a>
+				<span class="total-visit" title="Vue(s)"><i class="fas fa-eye total-visit-ico"></i><?= $datas["total_visit"]; ?></span>
+			</span>
 			<span>
 				<a href="index.php?action=administration&want=editPost&id_post=<?= $datas['id']; ?>" title="Editer le ticket"><i class="fas fa-edit edit-ico"></i></a>
 				<a href="index.php?action=administration&want=deletePost&id_post=<?= $datas['id']; ?>" title="Supprimer le ticket"><i class="fas fa-trash-alt delete-ico">	</i>
