@@ -60,13 +60,13 @@
 
 						<div id="contenair-menu-el" class="secondary-comm-menu" style="display : none;">
 							<div class="contenair-menu-el">
-								<a href="" class="a-menu-bar secondary-comm-a">
+								<a href="index.php?action=administration&want=seeComments" class="a-menu-bar secondary-comm-a">
 									<i class="far fa-comment icon-menu-bar"></i>Tout les commentaires
 								</a>
 							</div>
 
 							<div class="contenair-menu-el">
-								<a href="index.php?action=administration&want=seeComments" class="a-menu-bar secondary-comm-a">
+								<a href="index.php?action=administration&want=seeReportedComments" class="a-menu-bar secondary-comm-a">
 									<i class="fas fa-flag icon-menu-bar"></i>Commentaires signalés
 								</a>
 							</div>
