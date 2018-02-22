@@ -11,7 +11,7 @@
 			  tinyMCE.init({
 			    mode : "textareas",
 			    editor_selector : "mceEditor",
-			    width : "100%",
+			    width : "99%",
 			    branding : false
 			  });
 			  </script>
