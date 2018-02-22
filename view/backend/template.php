@@ -66,7 +66,7 @@
 							</div>
 
 							<div class="contenair-menu-el">
-								<a href="" class="a-menu-bar secondary-comm-a">
+								<a href="index.php?action=administration&want=seeComments" class="a-menu-bar secondary-comm-a">
 									<i class="fas fa-flag icon-menu-bar"></i>Commentaires signalés
 								</a>
 							</div>
