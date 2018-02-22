@@ -25,7 +25,7 @@ $dataP = $post->fetch();
 </div>
 
 <table id="last-comment-table">
-	<h2>Derniers Commentaire</h2>
+	<h2 id="title-last-comment">Derniers Commentaire</h2>
 		<?php
 			$i = 0;
 			while($dataC = $comments->fetch())
