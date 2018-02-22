@@ -67,7 +67,7 @@
 
 							<div class="contenair-menu-el">
 								<a href="" class="a-menu-bar secondary-comm-a">
-									<i class="far fa-comment icon-menu-bar"></i>Commentaires signalés
+									<i class="fas fa-flag icon-menu-bar"></i>Commentaires signalés
 								</a>
 							</div>
 						</div>
