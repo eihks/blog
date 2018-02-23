@@ -5,7 +5,12 @@ class ControllerAdminComment{
 	public static function seeAllComments()
 	{
 		$commentManager = new CommentManager();
-		$comments = $commentManager->getAllComments();
+		$commentsPerPage = 3;
+		$totalComments = $commentManager->getTotalRows();
+		$totalPage = ceil($totalComments/$commentsPerPage);
+		$currentPage = $_GET["page"];
+		$start = ($currentPage -1)*$commentsPerPage;
+		$comments = $commentManager->getCommsWithPagination($start, $commentsPerPage);
 		require("view/backend/seeCommentsView.php");	
 	}
 
