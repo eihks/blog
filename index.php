@@ -136,6 +136,10 @@ try{
 				ControllerAdmin::login();
 			}
 		}
+		else
+		{
+			throw new Exception("Page non trouvée");
+		}
 	}
 	else
 	{
