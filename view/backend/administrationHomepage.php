@@ -17,7 +17,7 @@ $dataP = $post->fetch();
 		</h2>
 		<a class="a-ticket" href="index.php?action=postpage&title=<?= $dataP['title'] ?>&id_post=<?= $dataP['id']; ?> ">
 			<span class="title"><h2><?= $dataP["title"]; ?></h2></span>
-			<span class="text"><p><?= substr($dataP["content"], 0,1000) . "..."; ?></p></span>
+			<span class="text"><p><?= substr(strip_tags($dataP["content"], "<p>"), 0,1000) . "..."; ?></p></span>
 			<span class="author"><p><?= $dataP["author"]; ?></p></span>
 			<span class ="date"><p><?= $dataP["creation_date_fr"]; ?></p></span>
 			<span class="total-visit" title="Vue(s)"><p><i class="fas fa-eye total-visit-ico"></i><?= $dataP["total_visit"]; ?></p></span>
@@ -51,6 +51,7 @@ $dataP = $post->fetch();
 							<a href="index.php?action=administration&want=confirmComment&comment_id=<?= $dataC['id']; ?>" title="Valider le commentaire" id="confirm-comment-btn"><i class="fas fa-check-circle confirm-ico fa-xs"></i></a>
 						</span>
 					</th>
+				</tr>
 		<?php
 			}
 		?>
