@@ -44,6 +44,8 @@ class ControllerAdminPost{
 	{
 		$postManager = new PostManager();
 		$post = $postManager->deletePost($_GET["id_post"]);
-		header("Location: index.php?action=administration");
+		$commentManager = new CommentManager();
+		$comment = $commentManager->deleteCommentsFromPost($_GET["id_post"]);
+		header("Location: index.php?action=administration&want=seePosts");
 	}
 }
