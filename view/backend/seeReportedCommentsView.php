@@ -6,7 +6,14 @@ ob_start();
 <div id="comments-contenair">
 	<ul>
 		<?php
+		if($_GET["page"] == 1)
+		{
 			$i = 0;
+		}
+		else
+		{
+			$i = $commentsPerPage * $_GET["page"] -$commentsPerPage;
+		}
 		while($datas = $comments->fetch())
 		{
 			$i++;
@@ -34,6 +41,19 @@ ob_start();
 		?>
 	</ul>
 </div>
+<?php
+$nextPage = $_GET["page"] +1;
+$lastPage = $_GET["page"] -1;
+if($_GET["page"] > 1)
+{
+	echo "<a href='index.php?action=administration&want=seeReportedComments&page=$lastPage'>Page précédente</a>";
+}
+
+if($_GET["page"] < $totalPage)
+{
+	echo "<a href='index.php?action=administration&want=seeReportedComments&page=$nextPage'>Page suivante</a>";
+}
+?>
 <script type="text/javascript">
 	document.querySelector("#confirm-comment-btn").addEventListener("click", function(e){
 		if(confirm("Souhaitez-vous vraiment valider le commentaire ? Après confirmation ce commentaire n'apparaitra plus comme signaler. \n Continuer ?") == false)
