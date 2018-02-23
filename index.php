@@ -125,6 +125,10 @@ try{
 					{
 						ControllerAdminComment::confirmComment();
 					}
+					elseif($_GET["want"] === "logout")
+					{
+						ControllerAdmin::logOut();
+					}
 				}
 				else
 				{
