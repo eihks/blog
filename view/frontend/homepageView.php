@@ -32,7 +32,7 @@ if($_GET["page"] > 1)
 		<a class="a-ticket" href="index.php?action=postpage&title=<?= $data['title'] ?>&id_post=<?= $data['id']; ?> ">
 			<h2><?= $data["title"]; ?></h2>
 			<span class="text">
-				<p><?= substr($data["content"], 0, 500) . "..."; ?></p>
+				<p><?= substr(strip_tags($data["content"]), 0, 500) . "..."; ?></p>
 			</span>
 			<div id="contenair-credit"><div class="author"><p><?= $data["author"]; ?></p></div><div class ="date"><p><?= $data["creation_date_fr"]; ?></p></div></div>
 		</a>
