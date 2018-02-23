@@ -109,4 +109,19 @@ class CommentManager extends Manager{
 		$comments = $db->query("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments ORDER BY id DESC LIMIT " .$start. ", ".$commentsPerPage);
 		return $comments;
 	}
+
+	public function getReportedTotalRows()
+	{
+		$db = $this->db();
+		$totalRows = $db->query("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments WHERE report_level > 0 ORDER BY id DESC");
+		$totalRows = $totalRows->rowCount();
+		return $totalRows;
+	}
+
+	public function getReportedCommsWithPagination($start, $commentsPerPage)
+	{
+		$db = $this->db();
+		$comments = $db->query("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments WHERE report_level > 0 ORDER BY id DESC LIMIT " .$start. ", ".$commentsPerPage);
+		return $comments;
+	}
 }
