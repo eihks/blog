@@ -27,7 +27,7 @@ ob_start();
 			}
 		?>
 			<li style="background-color : <?= $color; ?>">
-				<a href="index.php?action=postpage&id_post=<?= $datas['id_post']; ?>">Commentaire N°<?= $i ?></a>
+				<a href="index.php?action=postpage&id_post=<?= $datas['id_post']; ?>&title=<?= $datas['post_name']; ?>">Commentaire N°<?= $i ?></a>
 				<p class="p-Nreport">Signalements : <?= $datas["report_level"] ?></p>
 				<p class="p-relative-post">Ticket relatif <?= $datas["post_name"]; ?></p>
 				<span>
