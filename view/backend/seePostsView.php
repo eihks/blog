@@ -35,6 +35,18 @@ ob_start();
 		}
 		?>
 	</ul>
+	<?php
+	if($_GET["page"] > 1)
+	{
+		$lastPage = $_GET["page"] -1;
+		echo "<a href='index.php?action=administration&want=seePosts&page=$lastPage' title='Page précédente'>Page précédente</a>";
+	}
+	if($_GET["page"] < $totalPage)
+	{
+		$nextPage = $_GET["page"] +1;
+		echo "<a href='index.php?action=administration&want=seePosts&page=$nextPage' title='Page suivate'>Page suivante</a>";
+	}
+	?>
 	<script>
 		var deleteBtns = document.querySelectorAll(".delete-btn");
 		for(var i=0; i < deleteBtns.length; i++)
