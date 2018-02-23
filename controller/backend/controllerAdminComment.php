@@ -5,7 +5,7 @@ class ControllerAdminComment{
 	public static function seeAllComments()
 	{
 		$commentManager = new CommentManager();
-		$commentsPerPage = 3;
+		$commentsPerPage = 30;
 		$totalComments = $commentManager->getTotalRows();
 		$totalPage = ceil($totalComments/$commentsPerPage);
 		$currentPage = $_GET["page"];
