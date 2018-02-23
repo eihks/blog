@@ -124,4 +124,14 @@ class CommentManager extends Manager{
 		$comments = $db->query("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM comments WHERE report_level > 0 ORDER BY id DESC LIMIT " .$start. ", ".$commentsPerPage);
 		return $comments;
 	}
+
+	public function deleteCommentsFromPost($id_post)
+	{
+		$db = $this->db();
+		$comment = $db->prepare("DELETE FROM comments WHERE id_post= :id_post");
+		$comment->execute(array(
+			"id_post" => $id_post
+		));
+		return $comment;	
+	}
 }
