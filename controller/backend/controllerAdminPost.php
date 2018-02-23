@@ -4,8 +4,13 @@ require_once("model/PostManager.php");
 class ControllerAdminPost{
 	public static function seePosts()
 	{
+		$postPerPage = 30;
 		$postManager = new PostManager();
-		$posts = $postManager->getPosts();
+		$totalPost = $postManager->getTotalRow();
+		$totalPage = ceil($totalPost/$postPerPage);
+		$currentPage = $_GET["page"];
+		$start = ($currentPage -1)*$postPerPage;
+		$posts = $postManager->getPostsWithPagination($start, $postPerPage);
 		require("view/backend/seePostsView.php");
 	}
 
