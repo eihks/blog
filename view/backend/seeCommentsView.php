@@ -6,7 +6,14 @@ ob_start();
 <div id="comments-contenair">
 	<ul>
 		<?php
+		if($_GET["page"] == 1)
+		{
 			$i = 0;
+		}
+		else
+		{
+			$i = $commentsPerPage * $_GET["page"] -$commentsPerPage;
+		}
 		while($datas = $comments->fetch())
 		{
 			$i++;
@@ -20,7 +27,7 @@ ob_start();
 			}
 		?>
 			<li style="background-color : <?= $color; ?>">
-				<a href="index.php?action=postpage&id_post=<?= $datas['id_post']; ?>">Commentaire N°<?= $i ?></a>
+				<a href="index.php?action=postpage&id_post=<?= $datas['id_post']; ?>&title=<?= $datas['post_name'];?>" title="Voir le commentaire">Commentaire N°<?= $i ?></a>
 				<p class="p-relative-post">Ticket relatif : <?= $datas["post_name"]; ?></p>
 				<span>
 					<a href="index.php?action=administration&want=deleteComment&comment_id=<?= $datas['id']; ?>" title="Supprimer le commentaire" id="delete-comment-btn"><i class="fas fa-trash-alt delete-ico"></i></a>
@@ -33,6 +40,19 @@ ob_start();
 		?>
 	</ul>
 </div>
+<?php
+$nextPage = $_GET["page"] +1;
+$lastPage = $_GET["page"] -1;
+if($_GET["page"] > 1)
+{
+	echo "<a href='index.php?action=administration&want=seeComments&page=$lastPage'>Page précédente</a>";
+}
+
+if($_GET["page"] < $totalPage)
+{
+	echo "<a href='index.php?action=administration&want=seeComments&page=$nextPage'>Page suivante</a>";
+}
+?>
 <script type="text/javascript">
 	document.querySelector("#confirm-comment-btn").addEventListener("click", function(e){
 		if(confirm("Souhaitez-vous vraiment valider le commentaire ? Après confirmation ce commentaire n'apparaitra plus comme signaler. \n Continuer ?") == false)
