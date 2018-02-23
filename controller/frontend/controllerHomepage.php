@@ -11,6 +11,13 @@ class ControllerHomePage{
 		$currentPage = $_GET["page"];
 		$start = ($currentPage -1)*$postPerPage;
 		$posts = $postManager->getPostsWithPagination($start, $postPerPage);
-		require("view/frontend/homepageView.php");
+		if($_GET["page"] > $totalPage)
+		{
+			header("Location: index.php?action=homepage&page=1");
+		}
+		else
+		{
+			require("view/frontend/homepageView.php");
+		}
 	}
 }
