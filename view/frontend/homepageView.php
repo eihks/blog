@@ -42,28 +42,18 @@ if($_GET["page"] > 1)
 ?>
 </div>
 <div id="contenaire-link-page">
-	<?php 
-		if($currentPage > 1)
-		{
-			echo "<a href='index.php?action=homepage&page=$currentPage -1;'> < </a>";
-		}
-	$totalPage = 30;
-	for($i = $currentPage; $i <= $totalPage; $i++)
+	<?php
+	if($_GET["page"] > 1)
 	{
-		if($i > $currentPage +5)
-		{
-			break;
-		}
-		elseif($i == $currentPage)
-		{
-			echo "".$i;
-		}
-		else
-		{
-			echo "<a href='index.php?action=homepage&page=$i' title='Page $i'>". $i ."</a>";
-		}
+		$lastPage = $_GET["page"] -1;
+		echo "<a href='index.php?action=homepage&page=$lastPage' title='Page précédente'>Page précédente</a>";
 	}
-?>
+	if($_GET["page"] < $totalPage)
+	{
+		$nextPage = $_GET["page"] +1;
+		echo "<a href='index.php?action=homepage&page=$nextPage' title='Page suivate'>Page suivante</a>";
+	}
+	?>
 </div>
 <?php
 $content = ob_get_clean();
