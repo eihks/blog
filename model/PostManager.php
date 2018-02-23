@@ -2,10 +2,10 @@
 require_once("model/Manager.php");
 class PostManager extends Manager{
 
-	public function getPostsForHomepage($start, $postPerPage)
+	public function getPostsWithPagination($start, $postPerPage)
 	{
 		$db = $this->db();
-		$posts = $db->query("SELECT id, author, title, content, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM tickets ORDER BY id DESC LIMIT " .$start . ", " . $postPerPage);
+		$posts = $db->query("SELECT *, DATE_FORMAT(creation_date, \" Le %d/%m/%Y à %Hh%imin%ss\") AS creation_date_fr FROM tickets ORDER BY id DESC LIMIT " .$start . ", " . $postPerPage);
 		return $posts;
 	}
 	
