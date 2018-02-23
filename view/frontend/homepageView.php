@@ -54,6 +54,7 @@ if($_GET["page"] > 1)
 		echo "<a href='index.php?action=homepage&page=$nextPage' title='Page suivate'>Page suivante</a>";
 	}
 	?>
+	<a href="index.php?action=administration">Administration</a>
 </div>
 <?php
 $content = ob_get_clean();
