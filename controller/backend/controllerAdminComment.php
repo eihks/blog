@@ -10,13 +10,18 @@ class ControllerAdminComment{
 		$totalPage = ceil($totalComments/$commentsPerPage);
 		$currentPage = $_GET["page"];
 		$start = ($currentPage -1)*$commentsPerPage;
-		$comments = $commentManager->getCommsWithPagination($start, $commentsPerPage);
-		if($_GET["page"] > $totalPage)
+		if($totalPage == 0)
+		{	
+			$comments = $commentManager->getAllComments();
+			require("view/backend/seeCommentsView.php");
+		}
+		elseif($_GET["page"] > $totalPage)
 		{
 			header("Location: index.php?action=administration&want=seeComments&page=1");
 		}
 		else
 		{
+			$comments = $commentManager->getCommsWithPagination($start, $commentsPerPage);
 			require("view/backend/seeCommentsView.php");
 		}
 	}
@@ -29,13 +34,18 @@ class ControllerAdminComment{
 		$totalPage = ceil($totalComments/$commentsPerPage);
 		$currentPage = $_GET["page"];
 		$start = ($currentPage -1)*$commentsPerPage;
-		$comments = $commentManager->getReportedCommsWithPagination($start, $commentsPerPage);
-		if($_GET["page"] > $totalPage)
+		if($totalPage == 0)
+		{
+			$comments = $commentManager->getReportedComments();
+			require("view/backend/seeReportedCommentsView.php");
+		}
+		elseif($_GET["page"] > $totalPage)
 		{
 			header("Location: index.php?action=administration&want=seeReportedComments&page=1");
 		}
 		else
 		{
+			$comments = $commentManager->getReportedCommsWithPagination($start, $commentsPerPage);
 			require("view/backend/seeReportedCommentsView.php");
 		}
 	}
