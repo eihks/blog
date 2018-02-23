@@ -104,7 +104,14 @@ try{
 					}
 					elseif($_GET["want"] === "seeReportedComments")
 					{
-						ControllerAdminComment::seeReportedComments();
+						if(isset($_GET["page"]) AND $_GET["page"] > 0)
+						{
+							ControllerAdminComment::seeReportedComments();
+						}
+						else
+						{
+							header("Location: index.php?action=administration&want=seeReportedComments&page=1");
+						}
 					}
 					elseif($_GET["want"] === "deleteComment" AND $_GET["comment_id"] > 0) /* call for delete comment */
 					{
