@@ -6,6 +6,8 @@
 			<link rel="stylesheet" href="public/back-css/styleTemplate.css" />
 			<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 			<link rel="stylesheet" href="public/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all">
+			<link rel="icon" type="image/png" href="public/img/favicon.png" />
+			<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /><![endif]-->
 			<script type="text/javascript" src="public/tinymce/js/tinymce/tinymce.min.js"></script>
 			<script type="text/javascript">
 			  tinyMCE.init({
