@@ -56,7 +56,14 @@ try{
 				{
 					if($_GET["want"] === "seePosts") /* call page where we can see all posts */
 					{
-						ControllerAdminPost::seePosts();
+						if(isset($_GET["page"]) AND $_GET["page"] > 0)
+						{
+							ControllerAdminPost::seePosts();
+						}
+						else
+						{
+							header("Location: index.php?action=administration&want=seePosts&page=1");
+						}
 					}
 					elseif($_GET["want"] === "editPost" AND $_GET["id_post"] > 0) /* edit post */
 					{
