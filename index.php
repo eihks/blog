@@ -93,7 +93,14 @@ try{
 					}
 					elseif($_GET["want"] === "seeComments") /* call page for see all reported comments */
 					{
-						ControllerAdminComment::seeAllComments();
+						if(isset($_GET["page"]) AND $_GET["page"] > 0)
+						{
+							ControllerAdminComment::seeAllComments();
+						}
+						else
+						{
+							header("Location: index.php?action=administration&want=seeComments&page=1");
+						}
 					}
 					elseif($_GET["want"] === "seeReportedComments")
 					{
