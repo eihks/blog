@@ -11,7 +11,14 @@ class ControllerAdminComment{
 		$currentPage = $_GET["page"];
 		$start = ($currentPage -1)*$commentsPerPage;
 		$comments = $commentManager->getCommsWithPagination($start, $commentsPerPage);
-		require("view/backend/seeCommentsView.php");	
+		if($_GET["page"] > $totalPage)
+		{
+			header("Location: index.php?action=administration&want=seeComments&page=1");
+		}
+		else
+		{
+			require("view/backend/seeCommentsView.php");
+		}
 	}
 
 	public static function seeReportedComments()
@@ -23,7 +30,14 @@ class ControllerAdminComment{
 		$currentPage = $_GET["page"];
 		$start = ($currentPage -1)*$commentsPerPage;
 		$comments = $commentManager->getReportedCommsWithPagination($start, $commentsPerPage);
-		require("view/backend/seeReportedCommentsView.php");
+		if($_GET["page"] > $totalPage)
+		{
+			header("Location: index.php?action=administration&want=seeReportedComments&page=1");
+		}
+		else
+		{
+			require("view/backend/seeReportedCommentsView.php");
+		}
 	}
 
 	public static function deleteComment()
