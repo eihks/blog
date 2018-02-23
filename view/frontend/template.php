@@ -13,8 +13,7 @@
 
 		<body>
 			<div id="cookie-advertissement">
-				<p>Les cookies nous permettent de vérifier certaines informations lié au site et de facilister le partage de données entre les différentes pages,
-				 	en poursuivant votre navigation vous acceptez leurs utilisations. 
+				<p>Les cookies nous permettent de vérifier certaines informations liées au site et de faciliter le partage de données entre les différentes pages, en poursuivant votre navigation vous acceptez leurs utilisations. 
 					<a href="https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DDesktop&hl=fr">Plus d'informations</a>
 					<button id="accept-cookie-btn">Accepter</button>
 				</p>
