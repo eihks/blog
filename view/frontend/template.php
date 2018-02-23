@@ -5,6 +5,8 @@
 			<link rel="stylesheet" href="public/front-css/<?= $cssFile; ?>" />
 			<link rel="stylesheet" href="public/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all" />
 			<link rel="stylesheet" href="public/front-css/styleTemplateFront.css" />
+			<link rel="icon" type="image/png" href="public/img/favicon.png" />
+			<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /><![endif]-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 			<title> <?= $title ?></title>
 		</head>
