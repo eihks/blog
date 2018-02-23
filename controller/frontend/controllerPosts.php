@@ -1,11 +1,11 @@
 <?php
 require_once("model/PostManager.php");
-require_once("model/commentManager.php");
+require_once("model/CommentManager.php");
 class ControllerPosts{
 	public static function postpage() //display the post page
 	{
 		$postManager = new PostManager();
-		$post = $postManager->getPost();
+		$post = $postManager->getPost($_GET["id_post"]);
 		$commentManager = new CommentManager();
 		$comms = $commentManager->getComms($_GET["id_post"]);
 		$visit = $postManager->addOneVisit($_GET["id_post"]);
