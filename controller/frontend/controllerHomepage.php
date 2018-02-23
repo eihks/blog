@@ -1,6 +1,6 @@
 <?php
 require_once("model/PostManager.php");
-require_once("model/commentManager.php");
+require_once("model/CommentManager.php");
 class ControllerHomePage{
 	public static function homepage()
 	{
