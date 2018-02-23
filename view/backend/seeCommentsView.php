@@ -71,7 +71,7 @@ if($_GET["page"] < $totalPage)
 <?php
 if($i === 0)
 {
-	echo "<h2 style='text-align : center;'> Aucun commentaire signalé</h2>";
+	echo "<h2 style='text-align : center;'> Aucun commentaire</h2>";
 }
 $content = ob_get_clean();
 require("view/backend/template.php");
