@@ -36,7 +36,10 @@ class ControllerPosts{
 			$cookieSerialize = serialize($cookieUnserialize);
 			setcookie("reportedCommentList", $cookieSerialize, time() + (31556926)); //31556926 = total seconds in one year
 			$commentManager = new CommentManager();
-			$reportedComment = $commentManager->reportComment($_GET["id"]);
+			if($_SESSION["alreadyReported"] == false)
+			{
+				$reportedComment = $commentManager->reportComment($_GET["id"]);
+			}
 			header("Location: index.php?action=postpage&id_post=" .$_GET["id_post"]. "&title=" .$_GET["title"]);				
 		}
 		else
@@ -45,7 +48,10 @@ class ControllerPosts{
 			$tableReportCommentSerialize = serialize($tableReportComment);
 			setcookie("reportedCommentList", $tableReportCommentSerialize, time() + (31556926)); //31556926 = total seconds in one year
 			$commentManager = new CommentManager();
-			$reportedComment = $commentManager->reportComment($_GET["id"]);
+			if($_SESSION["alreadyReported"] == false)
+			{
+				$reportedComment = $commentManager->reportComment($_GET["id"]);
+			}
 			header("Location: index.php?action=postpage&id_post=" . $_GET['id_post'] . "&title=" . $_GET['title']);
 		}
 	}
