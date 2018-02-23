@@ -10,7 +10,7 @@ class ControllerHomePage{
 		$totalPage = ceil($totalPost/$postPerPage);
 		$currentPage = $_GET["page"];
 		$start = ($currentPage -1)*$postPerPage;
-		$posts = $postManager->getPostsForHomepage($start, $postPerPage);
+		$posts = $postManager->getPostsWithPagination($start, $postPerPage);
 		require("view/frontend/homepageView.php");
 	}
 }
