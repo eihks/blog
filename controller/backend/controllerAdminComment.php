@@ -17,7 +17,12 @@ class ControllerAdminComment{
 	public static function seeReportedComments()
 	{
 		$commentManager = new CommentManager();
-		$comments = $commentManager->getReportedComments();
+		$commentsPerPage = 30;
+		$totalComments = $commentManager->getReportedTotalRows();
+		$totalPage = ceil($totalComments/$commentsPerPage);
+		$currentPage = $_GET["page"];
+		$start = ($currentPage -1)*$commentsPerPage;
+		$comments = $commentManager->getReportedCommsWithPagination($start, $commentsPerPage);
 		require("view/backend/seeReportedCommentsView.php");
 	}
 
